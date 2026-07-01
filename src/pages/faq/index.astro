@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: 'How accurate is this immigration points calculator?',
+    answer: 'Our calculators use the official 2026 scoring criteria published by Immigration, Refugees and Citizenship Canada (IRCC) and the Australian Department of Home Affairs. While we strive for accuracy, these calculators provide estimates for informational purposes only. Your official score may vary based on nuances in your specific situation. We recommend consulting a licensed immigration professional for a definitive assessment.',
+  },
+  {
+    question: 'What is the CRS score needed to get an Invitation to Apply (ITA) for Canada?',
+    answer: 'There is no fixed CRS cutoff score. IRCC conducts Express Entry draws approximately every two weeks, and the minimum score varies with each draw. Recent general draws have seen cutoffs ranging from the low 400s to the 500s, depending on the number of invitations issued and the size of the candidate pool. Provincial nominations add 600 points and virtually guarantee an invitation.',
+  },
+  {
+    question: 'What is the minimum points score for an Australian skilled visa?',
+    answer: 'The official minimum pass mark for Australia\'s General Skilled Migration program is 65 points. However, in practice, many occupations require significantly higher scores due to competition. Some occupations may require 80, 90, or even more points for a realistic chance of receiving an invitation.',
+  },
+  {
+    question: 'How do language test scores convert to CLB levels for Canada?',
+    answer: 'Canadian Language Benchmarks (CLB) levels are determined by your scores on approved language tests. For English, IELTS General Training and CELPIP-General are accepted. For French, TEF Canada and TCF Canada are accepted. Each test has a conversion chart that maps test scores to CLB levels for each of the four abilities (reading, writing, listening, speaking).',
+  },
+  {
+    question: 'What language tests are accepted for Australia?',
+    answer: 'Australia accepts IELTS (Academic or General Training), PTE Academic, TOEFL iBT, Cambridge C1 Advanced, and the Occupational English Test (OET) for certain occupations. Superior English is defined as a score of 8+ on IELTS (or equivalent), proficient as 7+, and competent as 6+.',
+  },
+  {
+    question: 'Can I apply to both Canada and Australia at the same time?',
+    answer: 'Yes, there is no restriction on applying to multiple countries simultaneously. Many skilled workers submit expressions of interest or applications to both Canada and Australia to maximize their chances. Each country\'s process is independent, and applying to one does not affect your application to the other.',
+  },
+  {
+    question: 'How long is my Express Entry profile valid in Canada?',
+    answer: 'Your Express Entry profile is valid for 12 months from the date it is submitted. If you do not receive an Invitation to Apply within this period, your profile will expire and you will need to create a new one. You can update your profile at any time while it is active to reflect changes in your qualifications.',
+  },
+  {
+    question: 'How long is my EOI valid in Australia\'s SkillSelect?',
+    answer: 'An Expression of Interest (EOI) submitted through SkillSelect is valid for two years from the date of submission. If you do not receive an invitation within this period, your EOI will expire. You can update your EOI at any time to reflect changes in your circumstances, such as new test scores or additional work experience.',
+  },
+  {
+    question: 'Do I need a job offer to apply through Express Entry?',
+    answer: 'No, a job offer is not required to be eligible for Express Entry. However, a valid job offer supported by a Labour Market Impact Assessment (LMIA) can add 50 or 200 points to your CRS score, depending on the NOC category of the position. Many successful applicants receive invitations without a job offer.',
+  },
+  {
+    question: 'What is a Provincial Nominee Program (PNP)?',
+    answer: 'Provincial Nominee Programs allow Canadian provinces and territories to nominate individuals for permanent residence based on their specific economic and labor market needs. Receiving a provincial nomination adds 600 CRS points, which effectively guarantees an invitation in the next Express Entry draw. Each province has its own criteria and application process.',
+  },
+  {
+    question: 'Does this calculator store my personal data?',
+    answer: 'No. Our calculators run entirely in your web browser. We do not collect, store, or transmit any of the information you enter into the calculator. Your data stays on your device and is never sent to our servers.',
+  },
+  {
+    question: 'How often are the calculators updated?',
+    answer: 'We update our calculators whenever there are changes to the official scoring criteria for either country. We monitor official government announcements and update our tools promptly to ensure accuracy. The current calculators reflect the 2026 scoring criteria for both Canada and Australia.',
+  },
+];
+---
+
+<Layout title="Immigration FAQ — Canada CRS & Australia Points | ImmigrationPoints.com" description="Frequently asked questions about immigration points calculators, Canada Express Entry CRS, and Australia SkillSelect points system.">
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h1>
+      <p class="text-lg opacity-90">Common questions about immigration points systems and our calculators.</p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <div class="space-y-6">
+      {faqs.map((faq, i) => (
+        <div class="bg-white rounded-lg border border-neutral-200 p-6">
+          <h2 class="text-lg font-semibold text-neutral-800 mb-3">{faq.question}</h2>
+          <p class="text-neutral-600 leading-relaxed">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

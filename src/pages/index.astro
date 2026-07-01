@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Immigration Points Calculator — Canada CRS & Australia SkillSelect | ImmigrationPoints.com">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Immigration Points Calculator</h1>
+      <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto mb-8">
+        Calculate your immigration score for Canada Express Entry and Australia SkillSelect instantly. Free, accurate, and always up to date.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/canada/" class="bg-white text-primary font-semibold px-8 py-3 rounded-lg hover:bg-neutral-100 transition-colors text-lg">
+          Canada CRS Calculator
+        </a>
+        <a href="/australia/" class="bg-secondary text-white font-semibold px-8 py-3 rounded-lg hover:bg-secondary-dark transition-colors text-lg">
+          Australia Points Calculator
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Cards -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Canada Card -->
+      <div class="bg-white rounded-xl border border-neutral-200 p-8 hover:shadow-lg transition-shadow">
+        <div class="text-4xl mb-4">🍁</div>
+        <h2 class="text-2xl font-bold text-neutral-800 mb-3">Canada Express Entry CRS</h2>
+        <p class="text-neutral-600 mb-4">
+          The Comprehensive Ranking System (CRS) scores candidates out of 1,200 points based on age, education, language skills, work experience, and additional factors like provincial nominations.
+        </p>
+        <ul class="text-sm text-neutral-600 space-y-2 mb-6">
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> Core human capital factors</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> Spouse or common-law partner factors</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> Skill transferability combinations</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> Provincial nomination & job offer bonuses</li>
+        </ul>
+        <a href="/canada/" class="inline-block bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+          Calculate CRS Score &rarr;
+        </a>
+      </div>
+
+      <!-- Australia Card -->
+      <div class="bg-white rounded-xl border border-neutral-200 p-8 hover:shadow-lg transition-shadow">
+        <div class="text-4xl mb-4">🦘</div>
+        <h2 class="text-2xl font-bold text-neutral-800 mb-3">Australia SkillSelect Points</h2>
+        <p class="text-neutral-600 mb-4">
+          Australia's points-based system requires a minimum of 65 points to be eligible for a skilled visa. Points are awarded for age, English ability, work experience, education, and various bonuses.
+        </p>
+        <ul class="text-sm text-neutral-600 space-y-2 mb-6">
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> Age and English language ability</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> Education qualifications</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> Overseas and Australian work experience</li>
+          <li class="flex items-start gap-2"><span class="text-primary font-bold">&#10003;</span> State/regional nomination bonuses</li>
+        </ul>
+        <a href="/australia/" class="inline-block bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary-dark transition-colors">
+          Calculate Points &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section: Understanding Immigration Points Systems -->
+  <section class="bg-neutral-100 py-16">
+    <div class="max-w-4xl mx-auto px-4 prose prose-lg">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-6">Understanding Immigration Points-Based Systems</h2>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Immigration points-based systems are among the most transparent and merit-driven approaches to selecting immigrants. Countries like Canada and Australia have pioneered these systems, which evaluate prospective immigrants based on objective criteria such as age, education, language proficiency, and work experience. These systems are designed to identify individuals who are most likely to succeed economically and integrate well into the host country's society and labor market.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The fundamental principle behind points-based immigration is straightforward: applicants are scored against a set of predefined criteria, and those who meet or exceed a certain threshold are eligible for permanent residency or skilled worker visas. This approach provides clarity and predictability for applicants, who can assess their eligibility before investing significant time and resources into the application process.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">How Canada's Express Entry System Works</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Canada's Express Entry system, introduced in January 2015, manages applications for three federal economic immigration programs: the Federal Skilled Worker Program (FSWP), the Federal Skilled Trades Program (FSTP), and the Canadian Experience Class (CEC). The system uses the Comprehensive Ranking System (CRS) to rank candidates in the Express Entry pool on a scale of 0 to 1,200 points.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The CRS evaluates candidates across four main categories. First, the core human capital factors section awards points based on age, education, official language proficiency (in English and/or French), and Canadian work experience. This section accounts for up to 460 points for single applicants or 500 points for those with a spouse or common-law partner. Age is a significant factor, with maximum points awarded to applicants between 20 and 29 years old, reflecting Canada's focus on attracting younger immigrants who will contribute to the workforce for decades.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Education is evaluated based on the highest credential obtained, with doctoral degrees earning the most points (150 without a spouse). Language proficiency is measured using the Canadian Language Benchmark (CLB) scale, with points awarded for each of the four language abilities: speaking, listening, reading, and writing. Applicants can earn points for proficiency in both English and French, Canada's two official languages.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The second category, spouse or common-law partner factors, awards points based on the accompanying partner's education, language skills, and Canadian work experience. The third category, skill transferability factors, recognizes the value of combining strong attributes — for example, high education paired with strong language skills, or foreign work experience paired with Canadian experience. This section is capped at 100 points.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Finally, the additional points category can add up to 600 points for factors such as a provincial or territorial nomination (which alone awards 600 points), a valid job offer supported by a Labour Market Impact Assessment (LMIA), Canadian education credentials, French language proficiency, and having a sibling who is a Canadian citizen or permanent resident. The provincial nomination pathway is particularly notable because it virtually guarantees an Invitation to Apply (ITA), as the 600 additional points typically push candidates well above the minimum CRS cutoff score.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">How Australia's SkillSelect Points System Works</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Australia's General Skilled Migration (GSM) program uses the SkillSelect system to manage expressions of interest (EOIs) from prospective skilled migrants. The points test evaluates applicants on criteria similar to Canada's system but with its own unique structure and thresholds. The minimum pass mark is 65 points, though competitive occupations may require significantly higher scores for an invitation.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The Australian system awards age points on a broader scale, with the maximum of 30 points going to applicants aged 25 to 32. This reflects the ideal age range where immigrants are young enough to contribute for many years but experienced enough to bring valuable skills. English language proficiency is assessed through standardized tests like IELTS, PTE Academic, or TOEFL iBT, with superior English (equivalent to IELTS 8 in all bands) earning 20 points.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Work experience is divided into overseas and Australian categories, recognizing the premium placed on local experience. Australian work experience of eight or more years can earn up to 20 points, while overseas experience of the same duration earns 15 points. Education qualifications range from trade certificates (10 points) to doctoral degrees (20 points).
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Australia also offers various bonus points for meeting the Australian study requirement, holding specialist education qualifications in STEM or ICT fields, obtaining NAATI community language credentials, completing a Professional Year program, or having a skilled partner. State and territory nominations add 5 points for subclass 190 visas, while regional nominations or sponsorship for subclass 491 visas add 15 points, reflecting Australia's efforts to direct migration toward regional areas with workforce shortages.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">Comparing the Two Systems</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        While both Canada and Australia use points-based systems, there are important differences that applicants should understand. Canada's CRS is a ranking system — candidates compete against each other, and the highest-scoring applicants receive invitations in regular draws. There is no fixed pass mark; instead, the cutoff score varies with each draw based on the number of invitations issued and the quality of the applicant pool. In contrast, Australia's system uses a fixed minimum pass mark of 65 points, though in practice, many occupations require scores well above this minimum for a realistic chance of receiving an invitation.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Canada's maximum possible score of 1,200 points provides more granularity in differentiating candidates, while Australia's simpler scoring structure makes it easier for applicants to quickly assess their eligibility. Both systems have evolved over time to address changing immigration needs, labor market conditions, and policy priorities.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">Why Use Our Calculator</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Our immigration points calculators are designed to give you a quick, accurate estimate of your score under both systems. Whether you are just beginning to explore immigration options or are actively preparing your application, understanding your points score is the essential first step. By using our calculators, you can identify areas where you might improve your score — perhaps by taking a language test to achieve a higher CLB level, gaining additional work experience, or exploring provincial nomination programs.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The calculators on this site are built with the latest 2026 scoring criteria and are regularly updated to reflect any changes in immigration policy. They are completely free to use, require no registration, and do not store any personal data. We believe that access to accurate immigration information should be available to everyone, regardless of their ability to pay for expensive immigration consultants.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        It is important to note that while our calculators provide an accurate estimate based on the information you provide, they are intended for informational purposes only. Immigration scoring can involve nuances that are difficult to capture in an automated tool, and government policies can change. We strongly recommend consulting with a licensed immigration professional — such as a Regulated Canadian Immigration Consultant (RCIC) or a registered Australian Migration Agent (MARA) — before making any immigration decisions.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Whether you dream of building a life in Canada's vibrant cities and stunning landscapes, or you are drawn to Australia's incredible quality of life and economic opportunities, understanding your points score is where the journey begins. Use our calculators today to take the first step toward your new life abroad.
+      </p>
+    </div>
+  </section>
+</Layout>

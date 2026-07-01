@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://immigrationpoints.com/sitemap-index.xml

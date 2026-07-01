@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CRSCalculator from '../../components/CRSCalculator.tsx';
+---
+
+<Layout title="Canada Express Entry CRS Calculator 2026 | ImmigrationPoints.com" description="Free Canada Express Entry Comprehensive Ranking System (CRS) calculator. Calculate your CRS score for Federal Skilled Worker, Canadian Experience Class, and Federal Skilled Trades programs.">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Canada Express Entry CRS Calculator</h1>
+      <p class="text-lg opacity-90 max-w-2xl mx-auto">
+        Calculate your Comprehensive Ranking System (CRS) score for Canada's Express Entry immigration system. Updated for 2026 criteria.
+      </p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <CRSCalculator client:load />
+  </section>
+
+  <!-- Content -->
+  <section class="bg-neutral-100 py-16">
+    <div class="max-w-4xl mx-auto px-4 prose prose-lg">
+      <h2 class="text-3xl font-bold text-neutral-800 mb-6">Complete Guide to Canada's Express Entry CRS</h2>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The Comprehensive Ranking System (CRS) is the points-based system used by Immigration, Refugees and Citizenship Canada (IRCC) to assess and rank candidates in the Express Entry pool. Introduced alongside the Express Entry system in January 2015, the CRS has become the cornerstone of Canada's economic immigration selection process. Understanding how the CRS works is essential for anyone considering immigration to Canada through the Express Entry pathway.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">The Express Entry Process</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Express Entry is not an immigration program itself, but rather an application management system that handles applications for three federal economic immigration programs: the Federal Skilled Worker Program (FSWP), the Federal Skilled Trades Program (FSTP), and the Canadian Experience Class (CEC). To enter the Express Entry pool, candidates must first meet the eligibility requirements for at least one of these three programs.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Once in the pool, candidates are ranked against each other using the CRS. Approximately every two weeks, IRCC conducts an Express Entry draw, inviting the highest-ranking candidates to apply for permanent residence. The minimum CRS score required for an invitation varies with each draw and depends on several factors, including the number of invitations issued, the number and quality of candidates in the pool, and any program-specific or category-based draws that may be conducted.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">Understanding the CRS Scoring Structure</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The CRS assigns a maximum of 1,200 points, divided across four major categories. The first two categories — core human capital factors and spouse or common-law partner factors — together account for up to 500 points (or 460 for single applicants). The skill transferability section adds up to 100 points, and additional factors can contribute up to 600 points.
+      </p>
+
+      <h4 class="text-xl font-bold text-neutral-800 mt-6 mb-3">Core Human Capital Factors</h4>
+
+      <p class="text-neutral-700 leading-relaxed">
+        <strong>Age:</strong> The CRS awards maximum age points (110 for single applicants, 100 with a spouse) to candidates between 20 and 29 years old. Points decrease gradually after age 29, reaching zero at age 45. This reflects Canada's focus on attracting younger immigrants who will participate in the workforce for the longest period.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        <strong>Education:</strong> Educational credentials are assessed based on the highest level of education completed. A doctoral degree (PhD) earns the most points at 150 for single applicants, followed by a master's degree at 135, two or more post-secondary credentials at 128, and a bachelor's degree at 120. Credentials obtained outside Canada must be assessed by a designated Educational Credential Assessment (ECA) organization to be recognized under the CRS.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        <strong>Language Proficiency:</strong> Language skills are measured using the Canadian Language Benchmarks (CLB) for English or the Niveaux de competence linguistique canadiens (NCLC) for French. Points are awarded for each of the four language abilities — speaking, listening, reading, and writing — based on the CLB level achieved. A CLB level of 10 or above in each ability earns the maximum points (34 per ability for single applicants). Accepted language tests include IELTS General Training and CELPIP-General for English, and TEF Canada and TCF Canada for French.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        <strong>Canadian Work Experience:</strong> Work experience gained in Canada in skilled occupations (NOC TEER 0, 1, 2, or 3) is highly valued. Five or more years of Canadian work experience earns the maximum of 80 points for single applicants. This factor recognizes that candidates with Canadian work experience are more likely to integrate successfully into the Canadian labor market.
+      </p>
+
+      <h4 class="text-xl font-bold text-neutral-800 mt-6 mb-3">Spouse or Common-Law Partner Factors</h4>
+
+      <p class="text-neutral-700 leading-relaxed">
+        If you have a spouse or common-law partner who is accompanying you to Canada, their credentials can also contribute to your CRS score. Spouse factors include education (up to 10 points), first official language proficiency (up to 20 points), and Canadian work experience (up to 10 points). Having a spouse affects the scoring structure for the principal applicant as well — single applicants generally receive slightly higher points in the core human capital section to compensate for the absence of spouse factor points.
+      </p>
+
+      <h4 class="text-xl font-bold text-neutral-800 mt-6 mb-3">Skill Transferability Factors</h4>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The skill transferability section, capped at 100 points, rewards candidates who demonstrate strong combinations of skills. There are five cross-referencing combinations: education with language proficiency, education with Canadian work experience, foreign work experience with language proficiency, foreign work experience with Canadian work experience, and a certificate of qualification with language proficiency. Each combination can contribute up to 50 points, but the total for this section cannot exceed 100.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        This section is particularly important for candidates who may not score exceptionally high in any single factor but have a well-rounded profile. For example, a candidate with a master's degree and strong language skills (CLB 9+) can earn the full 50 points from the education-language combination, even without Canadian work experience.
+      </p>
+
+      <h4 class="text-xl font-bold text-neutral-800 mt-6 mb-3">Additional Points</h4>
+
+      <p class="text-neutral-700 leading-relaxed">
+        The additional points category can dramatically boost a candidate's CRS score. The most impactful factor is a provincial or territorial nomination, which adds 600 points — almost always enough to guarantee an invitation in the next draw. Provincial Nominee Programs (PNPs) allow provinces and territories to nominate candidates who meet their specific labor market and economic needs, providing an alternative pathway for candidates who may not have high enough CRS scores for the general pool draws.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        A valid job offer supported by a Labour Market Impact Assessment (LMIA) can add 50 points for most NOC categories, or 200 points for senior management positions (NOC TEER 0 major group 00). Canadian education credentials add 15 points for a one or two-year program, or 30 points for a program of three years or longer. French language proficiency adds 25 points (with English CLB 4 or below) or 50 points (with English CLB 5 or above), reflecting Canada's commitment to francophone immigration. Having a sibling who is a Canadian citizen or permanent resident adds 15 points.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">Recent CRS Draw Trends</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        CRS cutoff scores have varied significantly since the system's introduction. In the early years of Express Entry, cutoff scores were often in the 400s, which was accessible to many skilled workers without additional points from provincial nominations or job offers. However, as the program has evolved and the pool has grown, cutoff scores for general draws have fluctuated, sometimes reaching the 500s for general invitations.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Since 2023, IRCC has also conducted category-based draws targeting specific occupations or attributes, such as healthcare workers, STEM professionals, French-language speakers, and candidates with strong transportation sector experience. These targeted draws have their own cutoff scores and can provide additional opportunities for candidates with specific skills or qualifications.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">Strategies to Improve Your CRS Score</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        If your CRS score falls below recent cutoff thresholds, there are several strategies to consider. Improving your language test scores is often the most effective approach, as language points are multiplied across four abilities and also contribute to skill transferability combinations. Moving from CLB 8 to CLB 9 in your first language, for example, can add 32 or more points to your total score.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Obtaining an Educational Credential Assessment for additional education, gaining Canadian work experience, learning French as a second language, pursuing a provincial nomination, or securing a valid LMIA-supported job offer are all viable pathways to increasing your score. Each candidate's situation is unique, and the optimal strategy depends on your individual profile and circumstances.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        We recommend using this calculator regularly to track how changes in your qualifications might affect your CRS score. As you complete language tests, gain work experience, or pursue education, re-calculating your score can help you determine the best time to create or update your Express Entry profile. Remember that this calculator provides an estimate based on the information you input — for a definitive assessment, consult a Regulated Canadian Immigration Consultant (RCIC) or a licensed immigration lawyer.
+      </p>
+
+      <h3 class="text-2xl font-bold text-neutral-800 mt-8 mb-4">Important Reminders</h3>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Express Entry profiles are valid for 12 months from the date of submission. If you do not receive an Invitation to Apply within this period, you will need to create a new profile. It is essential to ensure that all information in your profile is accurate and supported by documentation, as misrepresentation can lead to your application being refused and potentially being barred from future applications for several years.
+      </p>
+
+      <p class="text-neutral-700 leading-relaxed">
+        Foreign educational credentials must be assessed by a designated organization before they can be counted in your CRS score. Language test results must be from an approved testing organization and must be less than two years old at the time of your Express Entry profile creation. Work experience must have been gained in skilled occupations classified under the National Occupational Classification (NOC) system at TEER 0, 1, 2, or 3 levels to be eligible for Express Entry.
+      </p>
+    </div>
+  </section>
+</Layout>

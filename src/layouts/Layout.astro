@@ -1,0 +1,84 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Free immigration points calculators for Canada Express Entry CRS and Australia SkillSelect. Calculate your score instantly.' } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Immigration Points Calculator" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-primary text-white shadow-md">
+      <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between flex-wrap gap-4">
+        <a href="/" class="text-xl font-bold hover:opacity-90 transition-opacity">
+          ImmigrationPoints.com
+        </a>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="/canada/" class="hover:underline underline-offset-4">Canada CRS</a>
+          <a href="/australia/" class="hover:underline underline-offset-4">Australia Points</a>
+          <a href="/faq/" class="hover:underline underline-offset-4">FAQ</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-neutral-300 mt-12">
+      <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="text-white font-semibold mb-3">Calculators</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/canada/" class="hover:text-white transition-colors">Canada Express Entry CRS</a></li>
+              <li><a href="/australia/" class="hover:text-white transition-colors">Australia SkillSelect Points</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-3">Resources</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/faq/" class="hover:text-white transition-colors">Frequently Asked Questions</a></li>
+              <li><a href="/legal/" class="hover:text-white transition-colors">Legal Disclaimer</a></li>
+              <li><a href="/privacy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-3">About</h3>
+            <p class="text-sm">
+              ImmigrationPoints.com provides free, open-source immigration points calculators
+              for prospective migrants to Canada and Australia. Our calculators are for informational
+              purposes only and do not constitute legal advice.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-neutral-700 pt-6 text-center text-sm">
+          <p>&copy; {currentYear} ImmigrationPoints.com. All rights reserved. Not affiliated with any government agency.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
