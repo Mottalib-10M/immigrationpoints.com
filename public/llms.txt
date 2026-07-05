@@ -1,0 +1,22 @@
+# immigrationpoints.com
+
+> Immigration points calculator — Express Entry (Canada CRS), Australia skilled migration (189/190/491).
+
+## Overview
+
+immigrationpoints.com is a free tool to calculate immigration points for skilled migration programs. It covers the Canadian Express Entry Comprehensive Ranking System (CRS), Australian skilled visa points tests (subclass 189, 190, and 491), and the UK points-based immigration system. Users can estimate their eligibility and score before applying.
+
+## Main features
+
+- Canada CRS calculator for Express Entry (Federal Skilled Worker, Canadian Experience Class, Federal Skilled Trades)
+- Australia points calculator for subclass 189 (Skilled Independent), 190 (Skilled Nominated), and 491 (Skilled Work Regional)
+- UK points-based system calculator
+- Breakdown of points by category (age, education, language, work experience, adaptability)
+- Score comparison against recent draw cutoffs and invitation rounds
+
+## Data sources
+
+- Immigration, Refugees and Citizenship Canada (IRCC): canada.ca
+- Australian Department of Home Affairs: immi.homeaffairs.gov.au
+- UK Home Office: gov.uk
+- Official points grids and selection criteria from respective government sources

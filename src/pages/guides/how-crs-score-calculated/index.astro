@@ -1,0 +1,216 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immigrationpoints.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://immigrationpoints.com/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "How CRS Score Is Calculated", "item": "https://immigrationpoints.com/guides/how-crs-score-calculated/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the maximum CRS score possible?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The maximum CRS score is 1,200 points. This includes up to 600 points from core and spouse factors plus skill transferability, and up to 600 additional points from provincial nominations, job offers, Canadian education, and other bonuses." }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does IRCC change the CRS scoring criteria?",
+      "acceptedAnswer": { "@type": "Answer", "text": "IRCC can update CRS criteria through ministerial instructions at any time. Major structural changes are infrequent, but the introduction of category-based draws in 2023 was a significant shift. Minor adjustments to point allocations or eligible factors can happen more frequently." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I get CRS points for my spouse's qualifications?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you have a spouse or common-law partner who is accompanying you, their education, language skills, and Canadian work experience contribute CRS points. However, the points structure differs: single applicants can score up to 460 points from core factors, while applicants with a spouse can score up to 500 points total (including spouse factors)." }
+    }
+  ]
+};
+---
+
+<Layout title="How CRS Score Is Calculated: Complete Breakdown of Express Entry Points | ImmigrationPoints.com" description="Detailed guide explaining how Canada's Comprehensive Ranking System (CRS) calculates your Express Entry score across all four factor categories.">
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <nav aria-label="Breadcrumb" class="text-sm opacity-80 mb-4">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li class="before:content-['/'] before:mx-2"><a href="/guides/" class="hover:underline">Guides</a></li>
+          <li class="before:content-['/'] before:mx-2">How CRS Score Is Calculated</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">How CRS Score Is Calculated: Complete Breakdown of Express Entry Points</h1>
+      <p class="text-lg opacity-90">Understand every component of the Comprehensive Ranking System and how IRCC determines your Express Entry ranking.</p>
+    </div>
+  </section>
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
+
+      <p>The Comprehensive Ranking System (CRS) is the scoring mechanism used by Immigration, Refugees and Citizenship Canada (IRCC) to rank candidates in the Express Entry pool. If you are applying through the Federal Skilled Worker Program (FSWP), the Canadian Experience Class (CEC), or the Federal Skilled Trades Program (FSTP), your CRS score determines whether you receive an Invitation to Apply (ITA) for permanent residence. Understanding how every point is calculated is essential to maximizing your score and your chances of success.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Overview of the CRS Structure</h2>
+
+      <p>The CRS evaluates candidates on a scale of 0 to 1,200 points. The scoring is divided into four major categories, each contributing a specific maximum number of points. The first three categories together are sometimes called the "base score" because they depend on your personal profile, while the fourth category awards bonus points for specific circumstances such as a provincial nomination or a valid job offer.</p>
+
+      <p>The four CRS categories are:</p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><strong>Core / Human Capital Factors</strong> - up to 460 points (single) or 360 points (with spouse)</li>
+        <li><strong>Spouse or Common-Law Partner Factors</strong> - up to 40 points (only if you have an accompanying partner)</li>
+        <li><strong>Skill Transferability Factors</strong> - up to 100 points</li>
+        <li><strong>Additional Points</strong> - up to 600 points</li>
+      </ol>
+
+      <p>For single applicants without a spouse or common-law partner, the maximum base score from categories 1 through 3 is 560 points (460 + 0 + 100). For applicants with a spouse, it is 500 points (360 + 40 + 100). In both cases, the additional points category can bring the theoretical maximum to either 1,160 or 1,100. However, the absolute cap is 1,200.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Category 1: Core / Human Capital Factors</h2>
+
+      <p>The core factors section is the most heavily weighted part of the CRS for most applicants. It evaluates four sub-factors: age, education, official language proficiency, and Canadian work experience. The maximum available points differ depending on whether you are single or have a spouse, because the total from categories 1 and 2 combined is always 500 for married applicants and 460 for single applicants.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Age</h3>
+      <p>Age is one of the most impactful factors. Maximum points are awarded to candidates between 20 and 29 years old. Points decrease progressively for older applicants, reaching zero at age 45 and above. For single applicants, the maximum is 110 points; for applicants with a spouse, it is 100 points.</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">Age</th><th class="border border-neutral-200 px-4 py-2 text-left">Without Spouse</th><th class="border border-neutral-200 px-4 py-2 text-left">With Spouse</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">17 or younger</td><td class="border border-neutral-200 px-4 py-2">0</td><td class="border border-neutral-200 px-4 py-2">0</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">18</td><td class="border border-neutral-200 px-4 py-2">99</td><td class="border border-neutral-200 px-4 py-2">90</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">19</td><td class="border border-neutral-200 px-4 py-2">105</td><td class="border border-neutral-200 px-4 py-2">95</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">20 - 29</td><td class="border border-neutral-200 px-4 py-2">110</td><td class="border border-neutral-200 px-4 py-2">100</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">30</td><td class="border border-neutral-200 px-4 py-2">105</td><td class="border border-neutral-200 px-4 py-2">95</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">31</td><td class="border border-neutral-200 px-4 py-2">99</td><td class="border border-neutral-200 px-4 py-2">90</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">32</td><td class="border border-neutral-200 px-4 py-2">94</td><td class="border border-neutral-200 px-4 py-2">85</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">33</td><td class="border border-neutral-200 px-4 py-2">88</td><td class="border border-neutral-200 px-4 py-2">80</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">34 - 44</td><td class="border border-neutral-200 px-4 py-2">decreasing</td><td class="border border-neutral-200 px-4 py-2">decreasing</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">45 or older</td><td class="border border-neutral-200 px-4 py-2">0</td><td class="border border-neutral-200 px-4 py-2">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Education</h3>
+      <p>Education points are based on your highest completed level of education. If your credential was obtained outside Canada, you need an Educational Credential Assessment (ECA) from a designated organization to prove its Canadian equivalency. The maximum education points are 150 for single applicants and 140 for those with a spouse.</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">Education Level</th><th class="border border-neutral-200 px-4 py-2 text-left">Without Spouse</th><th class="border border-neutral-200 px-4 py-2 text-left">With Spouse</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">Less than secondary school</td><td class="border border-neutral-200 px-4 py-2">0</td><td class="border border-neutral-200 px-4 py-2">0</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Secondary school diploma</td><td class="border border-neutral-200 px-4 py-2">30</td><td class="border border-neutral-200 px-4 py-2">28</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">One-year post-secondary</td><td class="border border-neutral-200 px-4 py-2">90</td><td class="border border-neutral-200 px-4 py-2">84</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Two-year post-secondary</td><td class="border border-neutral-200 px-4 py-2">98</td><td class="border border-neutral-200 px-4 py-2">91</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Bachelor's or three-year program</td><td class="border border-neutral-200 px-4 py-2">120</td><td class="border border-neutral-200 px-4 py-2">112</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Two or more post-secondary credentials</td><td class="border border-neutral-200 px-4 py-2">128</td><td class="border border-neutral-200 px-4 py-2">119</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Master's or professional degree</td><td class="border border-neutral-200 px-4 py-2">135</td><td class="border border-neutral-200 px-4 py-2">126</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Doctoral degree (PhD)</td><td class="border border-neutral-200 px-4 py-2">150</td><td class="border border-neutral-200 px-4 py-2">140</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Official Language Proficiency</h3>
+      <p>Language proficiency is assessed using the Canadian Language Benchmarks (CLB) for English and the Niveaux de compétence linguistique canadiens (NCLC) for French. Each of the four abilities - speaking, listening, reading, and writing - is scored individually, and CRS points are awarded based on the CLB or NCLC level achieved in each ability. The maximum is 136 points for the first official language and 24 points for the second, for a combined maximum of 160 (single) or 150 (with spouse).</p>
+
+      <p>To earn maximum first-language points, you need CLB 10 or higher in all four abilities. A CLB 10 corresponds to an IELTS General Training score of Listening 8.5, Reading 8.0, Writing 7.5, and Speaking 7.5. For the second official language, you can earn bonus points by scoring CLB 5 or higher in all four abilities of the other official language.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Canadian Work Experience</h3>
+      <p>Points are awarded for skilled work experience gained within Canada in NOC TEER 0, 1, 2, or 3 occupations. The maximum is 80 points for single applicants (five or more years of Canadian experience) and 70 points for those with a spouse. Importantly, this refers to Canadian work experience only; foreign work experience is counted separately under skill transferability factors.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Category 2: Spouse or Common-Law Partner Factors</h2>
+
+      <p>If you have a spouse or common-law partner who will accompany you to Canada, their qualifications contribute up to 40 points across three sub-factors: education (up to 10 points), official language proficiency (up to 20 points), and Canadian work experience (up to 10 points). These points compensate for the lower individual maximums in the core factors section for married applicants. If your spouse has strong qualifications, particularly high language test scores and Canadian work experience, you can recover much of the gap between married and single applicant maximums.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Category 3: Skill Transferability Factors</h2>
+
+      <p>The skill transferability category awards up to 100 points for combinations of two or more strong attributes. IRCC designed this category to reward well-rounded candidates whose skills are most likely to transfer successfully to the Canadian labor market. The combinations fall into five groups, each worth up to 50 points, but the total across all groups is capped at 100:</p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Education + Language:</strong> Strong first-language scores combined with post-secondary education (up to 50 points).</li>
+        <li><strong>Education + Canadian Work Experience:</strong> Post-secondary education combined with Canadian work experience (up to 50 points).</li>
+        <li><strong>Foreign Work Experience + Language:</strong> Foreign work experience combined with strong language scores (up to 50 points).</li>
+        <li><strong>Foreign Work Experience + Canadian Work Experience:</strong> Foreign work experience combined with Canadian work experience (up to 50 points).</li>
+        <li><strong>Certificate of Qualification (Trades) + Language:</strong> A Canadian certificate of qualification in a skilled trade combined with strong language scores (up to 50 points).</li>
+      </ul>
+
+      <p>The interplay between these factors means that a candidate with moderate scores across multiple areas can sometimes score higher in this category than someone with one very high score but weaknesses elsewhere. For example, a candidate with a bachelor's degree, CLB 9 in all abilities, and three years of foreign work experience could earn the full 50 points from both the Education + Language and Foreign Work Experience + Language combinations, reaching the 100-point cap.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Category 4: Additional Points</h2>
+
+      <p>The additional points category can dramatically change your CRS ranking. The most impactful factor by far is a provincial or territorial nomination, which adds 600 points and virtually guarantees an ITA. Other additional point sources include:</p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Provincial Nomination:</strong> 600 points</li>
+        <li><strong>Valid job offer - NOC TEER 0 Major Group 00:</strong> 200 points</li>
+        <li><strong>Valid job offer - other TEER 0, 1, 2, or 3:</strong> 50 points</li>
+        <li><strong>Canadian education - one or two-year credential:</strong> 15 points</li>
+        <li><strong>Canadian education - three-year or longer credential:</strong> 30 points</li>
+        <li><strong>French language proficiency (CLB 7+ in all abilities):</strong> 25 points</li>
+        <li><strong>French + English proficiency (CLB 7+ French, CLB 5+ English):</strong> 50 points</li>
+        <li><strong>Sibling in Canada (citizen or permanent resident):</strong> 15 points</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">How the CRS Score Affects Draw Outcomes</h2>
+
+      <p>IRCC conducts Express Entry draws approximately every two weeks. In each draw, IRCC sets a minimum CRS score and invites all candidates at or above that score to apply for permanent residence. The cutoff score varies depending on the number of invitations issued, the size and quality of the candidate pool, and whether the draw is a general all-program draw or a category-based draw targeting specific occupations or qualifications.</p>
+
+      <p>In 2024 and into 2025 and 2026, general draws have typically seen cutoff scores ranging from the low 400s to the 520s. Category-based draws for healthcare, STEM, trades, transport, and agriculture have sometimes had lower cutoffs, giving candidates in those fields an advantage even with a lower overall CRS score. French-language proficiency draws have also featured lower cutoffs, reflecting Canada's bilingual priorities.</p>
+
+      <p>It is important to note that your CRS score is not static. It can change over time as you age (losing age points after 29), gain additional work experience, retake language tests for higher scores, or obtain a provincial nomination. Many successful applicants strategically improve their scores over several months before receiving an ITA.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Tiebreaking Rules</h2>
+
+      <p>When multiple candidates share the same CRS score at the cutoff point, IRCC uses a tiebreaking rule based on the date and time the candidate submitted their Express Entry profile. Candidates who submitted their profiles earlier receive priority. This means that even a single CRS point can make a significant difference, and entering the pool as early as possible is advantageous.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-4 not-prose">
+        <details class="bg-white border border-neutral-200 rounded-lg p-4 group">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">What is the maximum CRS score possible?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">The maximum CRS score is 1,200 points. This includes up to 600 points from core and spouse factors plus skill transferability, and up to 600 additional points from provincial nominations, job offers, Canadian education, and other bonuses. In practice, very few candidates score above 800 without a provincial nomination.</p>
+        </details>
+        <details class="bg-white border border-neutral-200 rounded-lg p-4 group">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">How often does IRCC change the CRS scoring criteria?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">IRCC can update CRS criteria through ministerial instructions at any time. Major structural changes are infrequent, but the introduction of category-based draws in 2023 was a significant shift. Minor adjustments to point allocations or eligible factors can happen more frequently, so it is important to stay updated with official announcements.</p>
+        </details>
+        <details class="bg-white border border-neutral-200 rounded-lg p-4 group">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">Do I get CRS points for my spouse's qualifications?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">Yes, if you have a spouse or common-law partner who is accompanying you, their education, language skills, and Canadian work experience contribute CRS points. The spouse/partner factors category provides up to 40 points. However, your individual core factor maximums are slightly lower when you declare a spouse, reflecting the different allocation structure.</p>
+        </details>
+      </div>
+
+      <!-- Related Tools -->
+      <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mt-10">
+        <h2 class="text-xl font-bold text-neutral-800 mb-3">Related Tools &amp; Guides</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/canada/" class="text-primary hover:underline font-semibold">Canada CRS Calculator</a> - Calculate your CRS score instantly</li>
+          <li><a href="/guides/improve-crs-score/" class="text-primary hover:underline font-semibold">How to Improve Your CRS Score</a> - 15 proven strategies</li>
+          <li><a href="/guides/express-entry-draws/" class="text-primary hover:underline font-semibold">Express Entry Draws Explained</a> - How invitation rounds work</li>
+          <li><a href="/guides/ielts-clb-conversion/" class="text-primary hover:underline font-semibold">IELTS to CLB Conversion</a> - Language score mapping</li>
+          <li><a href="/guides/provincial-nominee-programs/" class="text-primary hover:underline font-semibold">Provincial Nominee Programs</a> - Earn 600 additional CRS points</li>
+        </ul>
+      </div>
+
+      <!-- Sources -->
+      <div class="mt-10 border-t border-neutral-200 pt-6">
+        <h2 class="text-xl font-bold text-neutral-800 mb-3">Sources</h2>
+        <ul class="space-y-1 text-sm text-neutral-600">
+          <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/criteria-comprehensive-ranking-system/grid.html" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IRCC - CRS Criteria Grid</a></li>
+          <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations.html" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IRCC - Rounds of Invitations</a></li>
+          <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IRCC - Express Entry Overview</a></li>
+        </ul>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-8 bg-neutral-100 rounded-lg p-4 text-sm text-neutral-600">
+        <strong>Disclaimer:</strong> This guide is for informational purposes only and does not constitute legal or immigration advice. It does not replace the official IRCC CRS calculator or the advice of a Regulated Canadian Immigration Consultant (RCIC). Immigration rules can change without notice. Always verify information with official government sources before making decisions.
+      </div>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="About - ImmigrationPoints.com" description="Learn about ImmigrationPoints.com, the free immigration points calculator for Canada CRS and Australia SkillSelect, built by Mottalib Radif.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immigrationpoints.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://immigrationpoints.com/about/" }
+    ]
+  })} />
+
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:text-primary">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-800">About</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold text-gray-900 mb-6">About ImmigrationPoints.com</h1>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-3">Who Built This Calculator</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        ImmigrationPoints.com was created by <strong>Mottalib Radif</strong>, a software engineer with deep expertise in financial technology and building web-based calculator tools. Mottalib has developed multiple calculator applications across different domains, bringing a data-driven and user-focused approach to each project. His technical skills in full-stack development and complex scoring algorithms make him well-suited to building accurate immigration points calculators. He understands the stress and complexity of the immigration process and is committed to making it easier through transparent, free tools.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-3">Our Mission</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The mission of ImmigrationPoints.com is to help prospective immigrants to Canada and Australia estimate their points scores using free, accurate, and up-to-date calculators. The immigration process can be overwhelming, with complex scoring criteria that change frequently. We aim to demystify the points-based systems used by these countries so that applicants can assess their eligibility, identify areas for improvement, and plan their applications with confidence.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-3">How the Calculators Work</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        For Canada, our calculator implements the Comprehensive Ranking System (CRS) used by Immigration, Refugees and Citizenship Canada (IRCC) for Express Entry. You enter details such as your age, education, language test scores, work experience, and any additional factors like provincial nominations or Canadian education. The calculator applies the official CRS scoring grid to produce your estimated score out of 1,200 points.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        For Australia, the calculator follows the points test used by the Department of Home Affairs for skilled migration visas (Subclass 189, 190, and 491). You enter your age, English language proficiency, skilled employment experience, educational qualifications, and other eligible factors. The tool computes your total points and indicates whether you meet the minimum threshold for an Expression of Interest (EOI).
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Both calculators run entirely in your browser, meaning no personal data is transmitted to our servers. You can adjust your inputs as many times as you like to explore different scenarios and understand how various factors affect your overall score.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-3">Data Sources</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The CRS scoring criteria are sourced from Immigration, Refugees and Citizenship Canada (canada.ca/immigration). The Australia points test criteria come from the Australian Department of Home Affairs (homeaffairs.gov.au). We monitor these official sources and update our calculators when scoring criteria, cut-off scores, or eligible occupations change.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        These calculators are for informational and planning purposes only. They are not affiliated with any government agency and do not constitute immigration advice. Actual scores and eligibility may differ based on document verification and official assessments. We strongly recommend consulting a registered migration agent (MARA-registered for Australia) or licensed immigration consultant (RCIC for Canada) for professional advice.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 mb-3">Contact</h2>
+      <p class="text-gray-700 leading-relaxed">
+        We appreciate your feedback and suggestions. If you find any discrepancies in the scoring or have ideas for additional features, please reach out through our website. We are dedicated to keeping these calculators accurate and helpful for prospective immigrants worldwide.
+      </p>
+    </section>
+  </div>
+</Layout>

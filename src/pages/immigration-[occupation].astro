@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CRSCalculator from '../components/CRSCalculator.tsx';
+import AustraliaCalculator from '../components/AustraliaCalculator.tsx';
+import { occupations } from '../lib/occupations-data';
+import type { Occupation } from '../lib/occupations-data';
+
+export function getStaticPaths() {
+  return occupations.map((entry) => ({
+    params: { occupation: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: Occupation;
+}
+
+const { entry } = Astro.props;
+const otherOccupations = occupations.filter((o) => o.slug !== entry.slug);
+
+const pageTitle = `Immigration Points for ${entry.title} - Canada & Australia 2026`;
+const pageDescription = `Calculate your immigration points as a ${entry.title.toLowerCase()}. Learn about Canada Express Entry CRS and Australia SkillSelect pathways, NOC ${entry.nocCode}, ANZSCO ${entry.australiaAnzsco}, eligibility, and how to maximize your score.`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immigrationpoints.com/" },
+    { "@type": "ListItem", "position": 2, "name": `Immigration for ${entry.title}`, "item": `https://immigrationpoints.com/immigration-${entry.slug}/` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": entry.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-6xl mx-auto px-4 py-4 text-sm text-neutral-500" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center gap-1">
+      <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+      <li class="before:content-['/'] before:mx-2 text-neutral-800 font-medium">Immigration for {entry.title}</li>
+    </ol>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Immigration Points for {entry.title}</h1>
+      <p class="text-lg opacity-90 max-w-2xl mx-auto">
+        Explore immigration pathways to Canada and Australia as a {entry.title.toLowerCase()}. Calculate your points and understand your eligibility for 2026.
+      </p>
+    </div>
+  </section>
+
+  <!-- Occupation Codes Cards -->
+  <section class="max-w-6xl mx-auto px-4 -mt-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="bg-white rounded-xl border border-neutral-200 p-6 shadow-sm">
+        <p class="text-sm text-neutral-500 mb-1">Canada NOC Code</p>
+        <p class="text-2xl font-bold text-primary">{entry.nocCode}</p>
+        <p class="text-sm text-neutral-600 mt-1">{entry.title}</p>
+      </div>
+      <div class="bg-white rounded-xl border border-neutral-200 p-6 shadow-sm">
+        <p class="text-sm text-neutral-500 mb-1">Australia ANZSCO Code</p>
+        <p class="text-2xl font-bold text-primary">{entry.australiaAnzsco}</p>
+        <p class="text-sm text-neutral-600 mt-1">{entry.title}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About This Occupation -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-neutral-800 mb-6">Immigration Prospects for {entry.title}s</h2>
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 leading-relaxed">{entry.description}</p>
+    </div>
+  </section>
+
+  <!-- Canada & Australia Eligibility -->
+  <section class="bg-neutral-100 py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-neutral-800 mb-6">Eligibility by Country</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-lg border border-neutral-200 p-6">
+          <h3 class="text-xl font-bold text-neutral-800 mb-3 flex items-center gap-2">
+            <span class="text-2xl">🍁</span> Canada
+          </h3>
+          <p class="text-neutral-600 text-sm leading-relaxed">{entry.canadaEligibility}</p>
+        </div>
+        <div class="bg-white rounded-lg border border-neutral-200 p-6">
+          <h3 class="text-xl font-bold text-neutral-800 mb-3 flex items-center gap-2">
+            <span class="text-2xl">🦘</span> Australia
+          </h3>
+          <p class="text-neutral-600 text-sm leading-relaxed">{entry.australiaEligibility}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Canada CRS Calculator -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-neutral-800 mb-2 text-center">Canada CRS Calculator</h2>
+    <p class="text-neutral-600 text-center mb-8">Calculate your Comprehensive Ranking System score for Express Entry as a {entry.title.toLowerCase()}.</p>
+    <CRSCalculator client:idle />
+  </section>
+
+  <!-- Australia Points Calculator -->
+  <section class="bg-neutral-100 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-neutral-800 mb-2 text-center">Australia Points Calculator</h2>
+      <p class="text-neutral-600 text-center mb-8">Calculate your SkillSelect points for skilled migration to Australia as a {entry.title.toLowerCase()}.</p>
+      <AustraliaCalculator client:idle />
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-neutral-800 mb-6">FAQ: Immigration for {entry.title}s</h2>
+    <div class="space-y-4">
+      {entry.faqs.map((faq) => (
+        <details class="bg-white rounded-lg border border-neutral-200 group">
+          <summary class="cursor-pointer p-5 font-semibold text-neutral-800 select-none flex items-center justify-between gap-4">
+            <span>{faq.question}</span>
+            <span class="text-neutral-400 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+          </summary>
+          <div class="px-5 pb-5 text-neutral-600 leading-relaxed border-t border-neutral-100 pt-4">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- Cross-Links -->
+  <section class="bg-neutral-100 py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-neutral-800 mb-6">Explore Other Occupations</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {otherOccupations.map((o) => (
+          <a
+            href={`/immigration-${o.slug}/`}
+            class="bg-white rounded-lg border border-neutral-200 p-3 text-center text-sm font-medium text-primary hover:bg-primary hover:text-white transition-colors"
+          >
+            {o.title}
+          </a>
+        ))}
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/canada/" class="text-primary hover:underline font-medium text-sm">Canada CRS Calculator &rarr;</a>
+        <a href="/australia/" class="text-primary hover:underline font-medium text-sm">Australia Points Calculator &rarr;</a>
+        <a href="/faq/" class="text-primary hover:underline font-medium text-sm">Immigration FAQ &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="max-w-4xl mx-auto px-4 py-8">
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+      <h3 class="font-semibold text-amber-800 mb-2">Disclaimer</h3>
+      <p class="text-amber-700 text-sm leading-relaxed">
+        This page is for informational purposes only and does not constitute legal advice, immigration advice, or any form of professional consultation. The information about immigration pathways for {entry.title.toLowerCase()}s is based on publicly available data and may not reflect the most recent policy changes. Immigration policies, occupation lists, and scoring criteria can change at any time without notice. We are not affiliated with Immigration, Refugees and Citizenship Canada (IRCC), the Australian Department of Home Affairs, or any government agency. NOC and ANZSCO codes and descriptions are provided for reference only and may not capture all nuances of occupation classification. For personalized immigration advice, please consult a Regulated Canadian Immigration Consultant (RCIC), a registered Australian Migration Agent (MARA), or a licensed immigration lawyer. Use of this tool and reliance on any information provided is at your own risk.
+      </p>
+    </div>
+  </section>
+</Layout>

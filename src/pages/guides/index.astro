@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const guides = [
+  {
+    slug: 'how-crs-score-calculated',
+    icon: '📊',
+    title: 'How CRS Score Is Calculated',
+    description: 'Complete breakdown of Express Entry points across core factors, spouse factors, skill transferability, and additional points.',
+  },
+  {
+    slug: 'improve-crs-score',
+    icon: '🚀',
+    title: 'How to Improve Your CRS Score',
+    description: '15 proven strategies to boost your Comprehensive Ranking System score and increase your chances of receiving an ITA.',
+  },
+  {
+    slug: 'express-entry-draws',
+    icon: '🎯',
+    title: 'Express Entry Draws Explained',
+    description: 'How Express Entry invitation rounds work, recent draw trends, category-based draws, and what to expect in 2026.',
+  },
+  {
+    slug: 'australia-189-vs-190-vs-491',
+    icon: '🌏',
+    title: 'Subclass 189 vs 190 vs 491',
+    description: 'Compare Australia\'s three main skilled visa pathways and determine which one best suits your situation.',
+  },
+  {
+    slug: 'ielts-clb-conversion',
+    icon: '🗣️',
+    title: 'IELTS to CLB Conversion',
+    description: 'Understand how IELTS, CELPIP, TEF, and TCF scores map to Canadian Language Benchmark levels and CRS points.',
+  },
+  {
+    slug: 'provincial-nominee-programs',
+    icon: '🏛️',
+    title: 'Provincial Nominee Programs (PNP)',
+    description: 'Overview of all Canadian PNPs, eligibility criteria, and how a nomination adds 600 CRS points to your profile.',
+  },
+  {
+    slug: 'proof-of-funds-immigration',
+    icon: '💰',
+    title: 'Proof of Funds Requirements',
+    description: 'Settlement funds you need to show for Canada Express Entry and Australia skilled visas, with current amounts.',
+  },
+  {
+    slug: 'immigration-processing-times',
+    icon: '⏱️',
+    title: 'Immigration Processing Times 2026',
+    description: 'Current processing timelines for Canada Express Entry and Australia skilled visa applications.',
+  },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://immigrationpoints.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://immigrationpoints.com/guides/"
+    }
+  ]
+};
+---
+
+<Layout title="Immigration Guides - Canada Express Entry & Australia Skilled Visas | ImmigrationPoints.com" description="In-depth guides on Canada Express Entry CRS, Australia SkillSelect points, language score conversions, provincial nominees, and more.">
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="text-sm opacity-80 mb-4">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li class="before:content-['/'] before:mx-2">Guides</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Immigration Guides</h1>
+      <p class="text-lg opacity-90 max-w-3xl">Step-by-step guides to help you understand the Canada Express Entry CRS system, Australia SkillSelect points test, and everything in between.</p>
+    </div>
+  </section>
+
+  <!-- Guide Cards Grid -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {guides.map((guide) => (
+        <a href={`/guides/${guide.slug}/`} class="group bg-white rounded-xl border border-neutral-200 p-6 hover:shadow-lg hover:border-primary-light transition-all duration-200 flex flex-col">
+          <div class="text-3xl mb-3">{guide.icon}</div>
+          <h2 class="text-lg font-bold text-neutral-800 mb-2 group-hover:text-primary transition-colors">{guide.title}</h2>
+          <p class="text-sm text-neutral-600 leading-relaxed mb-4 flex-1">{guide.description}</p>
+          <span class="text-sm font-semibold text-primary group-hover:underline underline-offset-4">Read guide &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

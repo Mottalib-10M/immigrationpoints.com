@@ -1,0 +1,200 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immigrationpoints.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://immigrationpoints.com/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Subclass 189 vs 190 vs 491", "item": "https://immigrationpoints.com/guides/australia-189-vs-190-vs-491/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the minimum points score for Australian skilled visas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The official minimum pass mark for all three visa subclasses (189, 190, and 491) is 65 points. However, the competitive reality is that most successful applicants score significantly higher. For popular occupations under subclass 189, effective cutoffs can be 80-95 points. Subclass 190 and 491 may have lower effective thresholds depending on the state or territory's nomination criteria." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I apply for multiple Australian visa subclasses at the same time?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can submit separate Expressions of Interest (EOIs) for different visa subclasses in SkillSelect. Many applicants submit EOIs for subclass 189, 190, and 491 simultaneously to maximize their chances of receiving an invitation. Each EOI is assessed independently based on the relevant criteria for that subclass." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the subclass 491 visa lead to permanent residency?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The subclass 491 visa is a provisional (temporary) visa valid for five years. However, after living and working in a designated regional area for at least three years and meeting income requirements, you can apply for the subclass 191 permanent residence visa. So while 491 is not directly a permanent visa, it provides a clear pathway to permanent residency." }
+    }
+  ]
+};
+---
+
+<Layout title="Subclass 189 vs 190 vs 491: Which Australian Visa Is Right for You? | ImmigrationPoints.com" description="Compare Australia's three main skilled visa pathways - subclass 189, 190, and 491 - including points requirements, nomination, regional obligations, and processing times.">
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <nav aria-label="Breadcrumb" class="text-sm opacity-80 mb-4">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li class="before:content-['/'] before:mx-2"><a href="/guides/" class="hover:underline">Guides</a></li>
+          <li class="before:content-['/'] before:mx-2">Subclass 189 vs 190 vs 491</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Subclass 189 vs 190 vs 491: Which Australian Visa Is Right for You?</h1>
+      <p class="text-lg opacity-90">A detailed comparison of Australia's three skilled visa pathways to help you choose the best route to living and working in Australia.</p>
+    </div>
+  </section>
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
+
+      <p>Australia's General Skilled Migration (GSM) program offers three primary visa pathways for skilled workers: the Skilled Independent visa (subclass 189), the Skilled Nominated visa (subclass 190), and the Skilled Work Regional (Provisional) visa (subclass 491). Each pathway has different requirements, benefits, and trade-offs. Choosing the right one depends on your occupation, points score, willingness to live in regional areas, and long-term immigration goals. This comprehensive guide compares all three visa subclasses to help you make an informed decision.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Overview of the Three Visa Subclasses</h2>
+
+      <p>Before diving into the details, here is a high-level comparison of the three visa types:</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">Feature</th><th class="border border-neutral-200 px-4 py-2 text-left">Subclass 189</th><th class="border border-neutral-200 px-4 py-2 text-left">Subclass 190</th><th class="border border-neutral-200 px-4 py-2 text-left">Subclass 491</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">Visa type</td><td class="border border-neutral-200 px-4 py-2">Permanent</td><td class="border border-neutral-200 px-4 py-2">Permanent</td><td class="border border-neutral-200 px-4 py-2">Provisional (5 years)</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Nomination required</td><td class="border border-neutral-200 px-4 py-2">No</td><td class="border border-neutral-200 px-4 py-2">State/territory</td><td class="border border-neutral-200 px-4 py-2">State/territory or eligible relative</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Bonus points</td><td class="border border-neutral-200 px-4 py-2">None</td><td class="border border-neutral-200 px-4 py-2">+5 points</td><td class="border border-neutral-200 px-4 py-2">+15 points</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Location restriction</td><td class="border border-neutral-200 px-4 py-2">None</td><td class="border border-neutral-200 px-4 py-2">Nominated state (2 years)</td><td class="border border-neutral-200 px-4 py-2">Designated regional area</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Occupation list</td><td class="border border-neutral-200 px-4 py-2">MLTSSL</td><td class="border border-neutral-200 px-4 py-2">MLTSSL + STSOL</td><td class="border border-neutral-200 px-4 py-2">MLTSSL + STSOL + ROL</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">Minimum points</td><td class="border border-neutral-200 px-4 py-2">65</td><td class="border border-neutral-200 px-4 py-2">65 (including 5 bonus)</td><td class="border border-neutral-200 px-4 py-2">65 (including 15 bonus)</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">PR pathway</td><td class="border border-neutral-200 px-4 py-2">Direct</td><td class="border border-neutral-200 px-4 py-2">Direct</td><td class="border border-neutral-200 px-4 py-2">Via subclass 191</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Subclass 189: Skilled Independent Visa</h2>
+
+      <p>The subclass 189 visa is the most straightforward pathway to permanent residency in Australia. It does not require sponsorship from a state or territory government, an employer, or a family member. You apply independently based on your skills, qualifications, and points score. Once granted, you can live and work anywhere in Australia with no geographic restrictions.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Key Requirements</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Your occupation must be on the Medium and Long-term Strategic Skills List (MLTSSL).</li>
+        <li>You must have a valid skills assessment from the relevant assessing authority for your occupation.</li>
+        <li>You must score at least 65 points on the points test, though competitive scores are typically much higher.</li>
+        <li>You must be under 45 years of age at the time of invitation.</li>
+        <li>You must meet English language requirements (at least Competent English, i.e., IELTS 6.0 in all bands or equivalent).</li>
+        <li>You must meet health and character requirements.</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Advantages</h3>
+      <p>The primary advantage of subclass 189 is freedom. Once you receive the visa, you are a permanent resident with no obligation to live in a particular state, territory, or region. You can settle in Sydney, Melbourne, Brisbane, or any other location of your choice. You also do not need to secure a nomination, which means fewer bureaucratic steps and no dependence on state-specific policies that can change with little notice.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Challenges</h3>
+      <p>The main challenge is competition. Because subclass 189 offers the most flexibility, it attracts the highest number of applicants, and invitation cutoffs for popular occupations can be extremely high - often 85 to 95 points or more. Some occupations have waiting times of one to two years even at high scores. The MLTSSL is also more restrictive than the occupation lists available to subclass 190 and 491 applicants, meaning your occupation may not be eligible for 189 at all.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Subclass 190: Skilled Nominated Visa</h2>
+
+      <p>The subclass 190 visa requires nomination by an Australian state or territory government. In exchange for the nomination, you receive 5 bonus points on the points test. Like subclass 189, this is a permanent residence visa, but it comes with an obligation to live and work in the nominating state or territory for at least two years after visa grant.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Key Requirements</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Your occupation must be on the MLTSSL or the Short-term Skilled Occupation List (STSOL) for the nominating state.</li>
+        <li>You must receive a nomination from a state or territory government.</li>
+        <li>You must score at least 65 points including the 5 nomination bonus points.</li>
+        <li>You must meet the same age, English, health, and character requirements as subclass 189.</li>
+        <li>You must commit to living in the nominating state for at least two years.</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Advantages</h3>
+      <p>The 5-point bonus can make the difference for candidates whose scores fall just below competitive thresholds. The broader occupation list (MLTSSL + STSOL) means that many occupations that are not eligible for subclass 189 can qualify under 190. States and territories also have their own selection criteria and processing priorities, so you may receive a nomination relatively quickly if your occupation is in demand in that particular state.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Challenges</h3>
+      <p>Each state and territory sets its own nomination criteria, occupation lists, and intake caps. These can change frequently, sometimes with only a few days' notice. The two-year residency obligation limits your geographic flexibility, and some states have additional requirements beyond the federal points test, such as minimum work experience in the state, job offers, or specific English language thresholds.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Subclass 491: Skilled Work Regional (Provisional) Visa</h2>
+
+      <p>The subclass 491 visa is a provisional visa designed to encourage skilled migration to regional areas of Australia. It provides 15 bonus points on the points test and is valid for five years. While it is not a permanent visa, it offers a clear pathway to permanent residency through the subclass 191 visa after meeting regional living and working requirements.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Key Requirements</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Your occupation must be on the MLTSSL, STSOL, or the Regional Occupation List (ROL).</li>
+        <li>You must be nominated by a state or territory government for a regional area, or sponsored by an eligible relative living in a designated regional area.</li>
+        <li>You must score at least 65 points including the 15 nomination bonus points.</li>
+        <li>You must live, work, and study only in designated regional areas of Australia.</li>
+        <li>Age, English, health, and character requirements apply.</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Advantages</h3>
+      <p>The 15-point bonus is substantial and makes the 491 accessible to candidates who might not score high enough for 189 or even 190. Designated regional areas are broadly defined and include major cities like Adelaide, Perth, Gold Coast, Canberra, and many others - only Sydney, Melbourne, and Brisbane are excluded from the regional definition for most purposes. The broader occupation list (MLTSSL + STSOL + ROL) also means more occupations are eligible. After three years of regional living and working, you can apply for permanent residency through subclass 191 with relatively straightforward requirements.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Challenges</h3>
+      <p>The main drawback is the provisional nature of the visa. For five years, you are restricted to designated regional areas and cannot move to Sydney, Melbourne, or Brisbane. Violating the regional living condition can jeopardize your visa and your pathway to permanent residency. Additionally, securing a state or territory nomination still requires meeting their specific criteria, which may include regional job offers, prior work experience in the region, or other conditions.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">How to Choose the Right Pathway</h2>
+
+      <p>The best visa subclass for you depends on several factors:</p>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Points score:</strong> If you have a high points score (80+), subclass 189 may be realistic. If you need additional points, 190 (+5) or 491 (+15) can bridge the gap.</li>
+        <li><strong>Occupation:</strong> Check which occupation lists include your occupation. If it is only on the ROL, 491 is your only option. If it is on the STSOL but not the MLTSSL, you can apply for 190 or 491 but not 189.</li>
+        <li><strong>Location preference:</strong> If you want to live in Sydney or Melbourne, 189 is the only visa without restrictions. If you are open to other major cities like Adelaide, Perth, or Canberra, 491 may work well.</li>
+        <li><strong>Timeline:</strong> Subclass 189 waiting times for competitive occupations can be very long. The 190 and 491 pathways may offer faster processing, especially if a state is actively recruiting in your occupation.</li>
+        <li><strong>Family ties:</strong> If you have an eligible relative in a regional area, they can sponsor your subclass 491 application, bypassing the need for a state nomination.</li>
+      </ul>
+
+      <p>Many successful applicants apply for multiple subclasses simultaneously by submitting separate EOIs for each in SkillSelect. This approach maximizes your chances of receiving an invitation through whichever pathway moves fastest.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Pathway to Permanent Residency from Subclass 491</h2>
+
+      <p>If you choose the subclass 491 route, your pathway to permanent residency is through the subclass 191 visa. To be eligible for subclass 191, you must hold or have held a subclass 491 visa, have lived in a designated regional area for at least three years, have complied with the conditions of your 491 visa, and meet a minimum taxable income threshold (currently around AUD 53,900 per year) for at least three of the five years. This pathway provides certainty that your provisional status will convert to permanent residency as long as you meet the requirements.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-4 not-prose">
+        <details class="bg-white border border-neutral-200 rounded-lg p-4">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">What is the minimum points score for Australian skilled visas?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">The official minimum pass mark for all three visa subclasses (189, 190, and 491) is 65 points. However, the competitive reality is that most successful applicants score significantly higher. For popular occupations under subclass 189, effective cutoffs can be 80-95 points. Subclass 190 and 491 may have lower effective thresholds depending on the state or territory's nomination criteria.</p>
+        </details>
+        <details class="bg-white border border-neutral-200 rounded-lg p-4">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">Can I apply for multiple Australian visa subclasses at the same time?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">Yes, you can submit separate Expressions of Interest (EOIs) for different visa subclasses in SkillSelect. Many applicants submit EOIs for subclass 189, 190, and 491 simultaneously to maximize their chances of receiving an invitation. Each EOI is assessed independently based on the relevant criteria for that subclass.</p>
+        </details>
+        <details class="bg-white border border-neutral-200 rounded-lg p-4">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">Does the subclass 491 visa lead to permanent residency?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">The subclass 491 visa is a provisional (temporary) visa valid for five years. However, after living and working in a designated regional area for at least three years and meeting income requirements, you can apply for the subclass 191 permanent residence visa. So while 491 is not directly a permanent visa, it provides a clear pathway to permanent residency.</p>
+        </details>
+      </div>
+
+      <!-- Related Tools -->
+      <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mt-10">
+        <h2 class="text-xl font-bold text-neutral-800 mb-3">Related Tools &amp; Guides</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/australia/" class="text-primary hover:underline font-semibold">Australia Points Calculator</a> - Calculate your score for 189, 190, or 491</li>
+          <li><a href="/guides/proof-of-funds-immigration/" class="text-primary hover:underline font-semibold">Proof of Funds Requirements</a> - Settlement funds for Australia</li>
+          <li><a href="/guides/immigration-processing-times/" class="text-primary hover:underline font-semibold">Processing Times 2026</a> - Current visa processing timelines</li>
+          <li><a href="/guides/ielts-clb-conversion/" class="text-primary hover:underline font-semibold">IELTS to CLB Conversion</a> - Language score mapping for both countries</li>
+        </ul>
+      </div>
+
+      <!-- Sources -->
+      <div class="mt-10 border-t border-neutral-200 pt-6">
+        <h2 class="text-xl font-bold text-neutral-800 mb-3">Sources</h2>
+        <ul class="space-y-1 text-sm text-neutral-600">
+          <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-independent-189" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Department of Home Affairs - Subclass 189</a></li>
+          <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-nominated-190" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Department of Home Affairs - Subclass 190</a></li>
+          <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-work-regional-702-702-702/skilled-work-regional-702-702-702-702" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Department of Home Affairs - Subclass 491</a></li>
+          <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-regional-702/permanent-residence-702" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Department of Home Affairs - Subclass 191</a></li>
+        </ul>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-8 bg-neutral-100 rounded-lg p-4 text-sm text-neutral-600">
+        <strong>Disclaimer:</strong> This guide is for informational purposes only and does not constitute legal or immigration advice. It does not replace the official Australian Department of Home Affairs tools or the advice of a registered Migration Agent (MARA). Immigration rules, occupation lists, and state nomination criteria can change without notice. Always verify information with official government sources before making decisions.
+      </div>
+    </div>
+  </article>
+</Layout>

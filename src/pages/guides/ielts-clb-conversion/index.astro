@@ -1,0 +1,234 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immigrationpoints.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://immigrationpoints.com/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "IELTS to CLB Conversion", "item": "https://immigrationpoints.com/guides/ielts-clb-conversion/" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which IELTS test should I take for Canada Express Entry?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For Canada Express Entry, you must take IELTS General Training, not IELTS Academic. The General Training version is the only IELTS format accepted by IRCC for immigration purposes. IELTS Academic is accepted for some study permit and professional licensing purposes but not for Express Entry CRS scoring." }
+    },
+    {
+      "@type": "Question",
+      "name": "What CLB level do I need for maximum CRS points?",
+      "acceptedAnswer": { "@type": "Answer", "text": "To earn maximum CRS points for your first official language, you need CLB 10 or higher in all four abilities. For IELTS General Training, this corresponds to Listening 8.5+, Reading 8.0+, Writing 7.5+, and Speaking 7.5+. Each ability is scored independently, so achieving CLB 10 in three abilities and CLB 9 in one will still give you the maximum for the three abilities but fewer points for the fourth." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use IELTS scores for both Canada and Australia applications?",
+      "acceptedAnswer": { "@type": "Answer", "text": "IELTS test results can be used for both countries, but each country may require a different version. Canada requires IELTS General Training for immigration, while Australia accepts both IELTS Academic and General Training. Test results are typically valid for two years for both countries. You may want to take both versions if you are applying to both countries." }
+    }
+  ]
+};
+---
+
+<Layout title="IELTS to CLB Conversion: How Language Scores Map to CRS Points | ImmigrationPoints.com" description="Complete IELTS to CLB conversion tables for Canada Express Entry, plus CELPIP, TEF, and TCF mappings. Understand how language scores translate to CRS points.">
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <nav aria-label="Breadcrumb" class="text-sm opacity-80 mb-4">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:underline">Home</a></li>
+          <li class="before:content-['/'] before:mx-2"><a href="/guides/" class="hover:underline">Guides</a></li>
+          <li class="before:content-['/'] before:mx-2">IELTS to CLB Conversion</li>
+        </ol>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">IELTS to CLB Conversion: How Language Scores Map to CRS Points</h1>
+      <p class="text-lg opacity-90">Detailed conversion tables for IELTS, CELPIP, TEF, and TCF to Canadian Language Benchmarks, and how each CLB level affects your CRS score.</p>
+    </div>
+  </section>
+
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
+
+      <p>Language proficiency is the most heavily weighted individual factor in Canada's Comprehensive Ranking System (CRS). Your language test scores are converted to Canadian Language Benchmark (CLB) levels, and these CLB levels determine your CRS points for official language proficiency. Understanding exactly how your IELTS, CELPIP, TEF, or TCF scores translate to CLB levels - and subsequently to CRS points - is essential for optimizing your Express Entry profile. This guide provides complete conversion tables and explains the relationship between language scores and CRS points.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">What Are Canadian Language Benchmarks (CLB)?</h2>
+
+      <p>The Canadian Language Benchmarks (CLB) are the national standard used to describe, measure, and recognize the English language ability of adult immigrants and prospective immigrants to Canada. The CLB scale ranges from 1 to 12, with 12 being the highest proficiency level. For French, the equivalent framework is the Niveaux de competence linguistique canadiens (NCLC), which uses the same numeric scale.</p>
+
+      <p>IRCC does not administer its own language test. Instead, it accepts results from designated language testing organizations and converts those scores to CLB or NCLC levels. For English, the accepted tests are IELTS General Training and CELPIP-General. For French, the accepted tests are TEF Canada and TCF Canada. Each test has its own scoring scale, and IRCC provides official conversion charts that map test scores to CLB/NCLC levels.</p>
+
+      <p>For Express Entry purposes, each of the four language abilities - Listening, Reading, Writing, and Speaking - is converted to a CLB level independently. Your CRS points depend on the CLB level achieved in each ability, not on an overall average. This means that a weakness in one ability cannot be compensated by strength in another when calculating CRS points.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">IELTS General Training to CLB Conversion</h2>
+
+      <p>IELTS General Training is the most widely used English language test for Canadian immigration. The test scores each ability on a band scale from 0 to 9 in half-band increments (e.g., 5.0, 5.5, 6.0, 6.5). Below is the official conversion chart:</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">CLB Level</th><th class="border border-neutral-200 px-4 py-2 text-left">Listening</th><th class="border border-neutral-200 px-4 py-2 text-left">Reading</th><th class="border border-neutral-200 px-4 py-2 text-left">Writing</th><th class="border border-neutral-200 px-4 py-2 text-left">Speaking</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 4</td><td class="border border-neutral-200 px-4 py-2">4.5</td><td class="border border-neutral-200 px-4 py-2">3.5</td><td class="border border-neutral-200 px-4 py-2">4.0</td><td class="border border-neutral-200 px-4 py-2">4.0</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 5</td><td class="border border-neutral-200 px-4 py-2">5.0</td><td class="border border-neutral-200 px-4 py-2">4.0</td><td class="border border-neutral-200 px-4 py-2">5.0</td><td class="border border-neutral-200 px-4 py-2">5.0</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 6</td><td class="border border-neutral-200 px-4 py-2">5.5</td><td class="border border-neutral-200 px-4 py-2">5.0</td><td class="border border-neutral-200 px-4 py-2">5.5</td><td class="border border-neutral-200 px-4 py-2">5.5</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 7</td><td class="border border-neutral-200 px-4 py-2">6.0</td><td class="border border-neutral-200 px-4 py-2">6.0</td><td class="border border-neutral-200 px-4 py-2">6.0</td><td class="border border-neutral-200 px-4 py-2">6.0</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 8</td><td class="border border-neutral-200 px-4 py-2">7.5</td><td class="border border-neutral-200 px-4 py-2">6.5</td><td class="border border-neutral-200 px-4 py-2">6.5</td><td class="border border-neutral-200 px-4 py-2">6.5</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 9</td><td class="border border-neutral-200 px-4 py-2">8.0</td><td class="border border-neutral-200 px-4 py-2">7.0</td><td class="border border-neutral-200 px-4 py-2">7.0</td><td class="border border-neutral-200 px-4 py-2">7.0</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 10</td><td class="border border-neutral-200 px-4 py-2">8.5</td><td class="border border-neutral-200 px-4 py-2">8.0</td><td class="border border-neutral-200 px-4 py-2">7.5</td><td class="border border-neutral-200 px-4 py-2">7.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Important note:</strong> IELTS General Training is required for Express Entry. IELTS Academic is not accepted for CRS scoring. The two tests have different reading and writing sections, and scores are not interchangeable.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">CELPIP-General to CLB Conversion</h2>
+
+      <p>CELPIP-General is a computer-based English language test developed in Canada and widely accepted as an alternative to IELTS. It scores each ability on a scale of 1 to 12, and the conversion to CLB is straightforward - each CELPIP score level corresponds directly to the same CLB level. For example, a CELPIP score of 7 in Listening equals CLB 7, a score of 9 equals CLB 9, and so on.</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">CLB Level</th><th class="border border-neutral-200 px-4 py-2 text-left">CELPIP Score</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 4</td><td class="border border-neutral-200 px-4 py-2">4</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 5</td><td class="border border-neutral-200 px-4 py-2">5</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 6</td><td class="border border-neutral-200 px-4 py-2">6</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 7</td><td class="border border-neutral-200 px-4 py-2">7</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 8</td><td class="border border-neutral-200 px-4 py-2">8</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 9</td><td class="border border-neutral-200 px-4 py-2">9</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 10+</td><td class="border border-neutral-200 px-4 py-2">10+</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Many candidates find CELPIP more comfortable than IELTS because it is fully computerized (including the speaking section, which is recorded rather than conducted face-to-face), and because it is designed specifically for the Canadian context. However, CELPIP is primarily available in Canada and has fewer international test centers than IELTS.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">TEF Canada to NCLC Conversion (French)</h2>
+
+      <p>TEF Canada (Test d'evaluation de francais) is one of two accepted French language tests for Express Entry. Scoring varies by section, and the conversion to NCLC levels is as follows:</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">NCLC Level</th><th class="border border-neutral-200 px-4 py-2 text-left">Listening (Comprehension orale)</th><th class="border border-neutral-200 px-4 py-2 text-left">Reading (Comprehension ecrite)</th><th class="border border-neutral-200 px-4 py-2 text-left">Writing (Expression ecrite)</th><th class="border border-neutral-200 px-4 py-2 text-left">Speaking (Expression orale)</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 5</td><td class="border border-neutral-200 px-4 py-2">181 - 216</td><td class="border border-neutral-200 px-4 py-2">151 - 180</td><td class="border border-neutral-200 px-4 py-2">226 - 270</td><td class="border border-neutral-200 px-4 py-2">226 - 270</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 6</td><td class="border border-neutral-200 px-4 py-2">217 - 248</td><td class="border border-neutral-200 px-4 py-2">181 - 206</td><td class="border border-neutral-200 px-4 py-2">271 - 309</td><td class="border border-neutral-200 px-4 py-2">271 - 309</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 7</td><td class="border border-neutral-200 px-4 py-2">249 - 279</td><td class="border border-neutral-200 px-4 py-2">207 - 232</td><td class="border border-neutral-200 px-4 py-2">310 - 348</td><td class="border border-neutral-200 px-4 py-2">310 - 348</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 8</td><td class="border border-neutral-200 px-4 py-2">280 - 297</td><td class="border border-neutral-200 px-4 py-2">233 - 247</td><td class="border border-neutral-200 px-4 py-2">349 - 370</td><td class="border border-neutral-200 px-4 py-2">349 - 370</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 9</td><td class="border border-neutral-200 px-4 py-2">298 - 315</td><td class="border border-neutral-200 px-4 py-2">248 - 262</td><td class="border border-neutral-200 px-4 py-2">371 - 392</td><td class="border border-neutral-200 px-4 py-2">371 - 392</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 10+</td><td class="border border-neutral-200 px-4 py-2">316 - 360</td><td class="border border-neutral-200 px-4 py-2">263 - 300</td><td class="border border-neutral-200 px-4 py-2">393 - 450</td><td class="border border-neutral-200 px-4 py-2">393 - 450</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">TCF Canada to NCLC Conversion (French)</h2>
+
+      <p>TCF Canada (Test de connaissance du francais) is the other accepted French language test. Its scoring system uses different ranges than TEF:</p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">NCLC Level</th><th class="border border-neutral-200 px-4 py-2 text-left">Listening</th><th class="border border-neutral-200 px-4 py-2 text-left">Reading</th><th class="border border-neutral-200 px-4 py-2 text-left">Writing</th><th class="border border-neutral-200 px-4 py-2 text-left">Speaking</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 5</td><td class="border border-neutral-200 px-4 py-2">331 - 368</td><td class="border border-neutral-200 px-4 py-2">342 - 374</td><td class="border border-neutral-200 px-4 py-2">6 - 9</td><td class="border border-neutral-200 px-4 py-2">6 - 9</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 6</td><td class="border border-neutral-200 px-4 py-2">369 - 397</td><td class="border border-neutral-200 px-4 py-2">375 - 405</td><td class="border border-neutral-200 px-4 py-2">6 - 9</td><td class="border border-neutral-200 px-4 py-2">6 - 9</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 7</td><td class="border border-neutral-200 px-4 py-2">398 - 457</td><td class="border border-neutral-200 px-4 py-2">406 - 452</td><td class="border border-neutral-200 px-4 py-2">10 - 11</td><td class="border border-neutral-200 px-4 py-2">10 - 11</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 8</td><td class="border border-neutral-200 px-4 py-2">458 - 502</td><td class="border border-neutral-200 px-4 py-2">453 - 498</td><td class="border border-neutral-200 px-4 py-2">12 - 13</td><td class="border border-neutral-200 px-4 py-2">12 - 13</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 9</td><td class="border border-neutral-200 px-4 py-2">503 - 522</td><td class="border border-neutral-200 px-4 py-2">499 - 523</td><td class="border border-neutral-200 px-4 py-2">14 - 15</td><td class="border border-neutral-200 px-4 py-2">14 - 15</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">NCLC 10+</td><td class="border border-neutral-200 px-4 py-2">523 - 699</td><td class="border border-neutral-200 px-4 py-2">524 - 699</td><td class="border border-neutral-200 px-4 py-2">16 - 20</td><td class="border border-neutral-200 px-4 py-2">16 - 20</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">How CLB Levels Translate to CRS Points</h2>
+
+      <p>Once your test scores are converted to CLB/NCLC levels, the CRS awards points for each ability independently. The points vary depending on whether you are a single applicant or have a spouse, and whether the language is your first or second official language.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">First Official Language CRS Points (Per Ability)</h3>
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-sm border border-neutral-200">
+          <thead><tr class="bg-neutral-100"><th class="border border-neutral-200 px-4 py-2 text-left">CLB Level</th><th class="border border-neutral-200 px-4 py-2 text-left">Without Spouse (per ability)</th><th class="border border-neutral-200 px-4 py-2 text-left">With Spouse (per ability)</th></tr></thead>
+          <tbody>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 3 or lower</td><td class="border border-neutral-200 px-4 py-2">0</td><td class="border border-neutral-200 px-4 py-2">0</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 4</td><td class="border border-neutral-200 px-4 py-2">6</td><td class="border border-neutral-200 px-4 py-2">6</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 5</td><td class="border border-neutral-200 px-4 py-2">6</td><td class="border border-neutral-200 px-4 py-2">6</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 6</td><td class="border border-neutral-200 px-4 py-2">9</td><td class="border border-neutral-200 px-4 py-2">8</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 7</td><td class="border border-neutral-200 px-4 py-2">17</td><td class="border border-neutral-200 px-4 py-2">16</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 8</td><td class="border border-neutral-200 px-4 py-2">23</td><td class="border border-neutral-200 px-4 py-2">22</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 9</td><td class="border border-neutral-200 px-4 py-2">31</td><td class="border border-neutral-200 px-4 py-2">29</td></tr>
+            <tr><td class="border border-neutral-200 px-4 py-2">CLB 10+</td><td class="border border-neutral-200 px-4 py-2">34</td><td class="border border-neutral-200 px-4 py-2">32</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>For a single applicant, achieving CLB 10 in all four abilities earns 136 points (34 x 4) from the first official language. Dropping to CLB 9 in just one ability reduces the total to 127 points (34 x 3 + 31), a loss of 9 points from that single-ability decrease. This illustrates why targeting the highest possible score in every ability is so important.</p>
+
+      <h3 class="text-xl font-bold text-neutral-800 mt-8 mb-3">Second Official Language Bonus Points</h3>
+      <p>If you take a test in Canada's other official language (English if French is your first language, or vice versa), you can earn up to 24 additional points (without spouse) or 22 points (with spouse). To earn any second-language points, you need at least CLB 5 in all four abilities of the second language. Higher scores earn more points, with the maximum awarded at CLB 9 or higher per ability.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Language Scores and Skill Transferability</h2>
+
+      <p>Beyond direct language points, your CLB level also affects your skill transferability score. The "Education + Language" and "Foreign Work Experience + Language" combinations require at least CLB 7 in all abilities to start earning transferability points, with maximum transferability points available at CLB 9+. This compounding effect means that improving your language scores from CLB 7 to CLB 9 can add both direct language points and transferability points, creating a total impact of 30 to 50+ additional CRS points depending on your other qualifications.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Tips for Maximizing Your Language Score</h2>
+
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Take practice tests under timed conditions</strong> to identify your weakest abilities and focus your preparation accordingly.</li>
+        <li><strong>Consider both IELTS and CELPIP.</strong> Some candidates perform better on one test format than the other. CELPIP's computerized speaking section may suit those uncomfortable with face-to-face interviews.</li>
+        <li><strong>Retake the test if needed.</strong> Many successful Express Entry candidates take the language test two or three times before achieving their target scores. There is no penalty for multiple attempts.</li>
+        <li><strong>Prepare specifically for the test format,</strong> not just for general English proficiency. Understanding the question types, timing, and scoring rubrics can significantly improve your performance.</li>
+        <li><strong>If you speak French,</strong> take a TEF or TCF test even if English is your stronger language. The second-language bonus of up to 24 points and the French additional points bonus of 25-50 points can substantially increase your CRS score.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Language Requirements for Australia</h2>
+
+      <p>While this guide focuses primarily on Canada's CLB system, it is worth noting the Australian language scoring for comparison. Australia awards points based on overall English proficiency levels: Competent (IELTS 6.0 in all bands) earns 0 points, Proficient (IELTS 7.0 in all bands) earns 10 points, and Superior (IELTS 8.0 in all bands) earns 20 points. Australia accepts IELTS (Academic or General), PTE Academic, TOEFL iBT, Cambridge C1 Advanced, and OET. Unlike Canada, Australia does not award points for a second language.</p>
+
+      <h2 class="text-2xl font-bold text-neutral-800 mt-10 mb-4">Frequently Asked Questions</h2>
+
+      <div class="space-y-4 not-prose">
+        <details class="bg-white border border-neutral-200 rounded-lg p-4">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">Which IELTS test should I take for Canada Express Entry?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">For Canada Express Entry, you must take IELTS General Training, not IELTS Academic. The General Training version is the only IELTS format accepted by IRCC for immigration purposes. IELTS Academic is accepted for some study permit and professional licensing purposes but not for Express Entry CRS scoring.</p>
+        </details>
+        <details class="bg-white border border-neutral-200 rounded-lg p-4">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">What CLB level do I need for maximum CRS points?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">To earn maximum CRS points for your first official language, you need CLB 10 or higher in all four abilities. For IELTS General Training, this corresponds to Listening 8.5+, Reading 8.0+, Writing 7.5+, and Speaking 7.5+. Each ability is scored independently, so achieving CLB 10 in three abilities and CLB 9 in one will still give you the maximum for three abilities but fewer points for the fourth.</p>
+        </details>
+        <details class="bg-white border border-neutral-200 rounded-lg p-4">
+          <summary class="font-semibold text-neutral-800 cursor-pointer">Can I use IELTS scores for both Canada and Australia applications?</summary>
+          <p class="mt-3 text-neutral-600 leading-relaxed">IELTS test results can be used for both countries, but each country may require a different version. Canada requires IELTS General Training for immigration, while Australia accepts both IELTS Academic and General Training. Test results are typically valid for two years for both countries. You may want to take both versions if you are applying to both countries simultaneously.</p>
+        </details>
+      </div>
+
+      <!-- Related Tools -->
+      <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mt-10">
+        <h2 class="text-xl font-bold text-neutral-800 mb-3">Related Tools &amp; Guides</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/canada/" class="text-primary hover:underline font-semibold">Canada CRS Calculator</a> - See how your language scores affect your CRS</li>
+          <li><a href="/australia/" class="text-primary hover:underline font-semibold">Australia Points Calculator</a> - Calculate your Australian visa points</li>
+          <li><a href="/guides/how-crs-score-calculated/" class="text-primary hover:underline font-semibold">How CRS Score Is Calculated</a> - Complete scoring breakdown</li>
+          <li><a href="/guides/improve-crs-score/" class="text-primary hover:underline font-semibold">How to Improve Your CRS Score</a> - Strategies beyond language</li>
+        </ul>
+      </div>
+
+      <!-- Sources -->
+      <div class="mt-10 border-t border-neutral-200 pt-6">
+        <h2 class="text-xl font-bold text-neutral-800 mb-3">Sources</h2>
+        <ul class="space-y-1 text-sm text-neutral-600">
+          <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/language-requirements/language-testing.html" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IRCC - Language Testing for Express Entry</a></li>
+          <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/language-requirements/equivalency-charts.html" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IRCC - Language Test Equivalency Charts</a></li>
+          <li><a href="https://immi.homeaffairs.gov.au/help-support/meeting-our-requirements/english-language" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Department of Home Affairs - English Language Requirements</a></li>
+        </ul>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-8 bg-neutral-100 rounded-lg p-4 text-sm text-neutral-600">
+        <strong>Disclaimer:</strong> This guide is for informational purposes only and does not constitute legal or immigration advice. It does not replace the official IRCC language equivalency charts or the advice of a Regulated Canadian Immigration Consultant (RCIC) or registered Australian Migration Agent (MARA). Conversion tables may be updated by governments at any time. Always verify information with official sources before making decisions.
+      </div>
+    </div>
+  </article>
+</Layout>

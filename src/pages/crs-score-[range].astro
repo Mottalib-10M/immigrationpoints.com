@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CRSCalculator from '../components/CRSCalculator.tsx';
+import { crsScoreRanges } from '../lib/crs-scores-data';
+import type { CRSScoreRange } from '../lib/crs-scores-data';
+
+export function getStaticPaths() {
+  return crsScoreRanges.map((entry) => ({
+    params: { range: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CRSScoreRange;
+}
+
+const { entry } = Astro.props;
+const otherRanges = crsScoreRanges.filter((r) => r.slug !== entry.slug);
+
+const pageTitle = `CRS Score ${entry.rangeLow}–${entry.rangeHigh}: Your Express Entry Chances & How to Improve`;
+const pageDescription = `Learn what a CRS score of ${entry.rangeLow} to ${entry.rangeHigh} means for your Canada Express Entry application. Understand your invitation likelihood, see typical profiles, and discover proven strategies to improve your score.`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://immigrationpoints.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Canada CRS Calculator", "item": "https://immigrationpoints.com/canada/" },
+    { "@type": "ListItem", "position": 3, "name": entry.label, "item": `https://immigrationpoints.com/crs-score-${entry.slug}/` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": entry.faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-6xl mx-auto px-4 py-4 text-sm text-neutral-500" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center gap-1">
+      <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+      <li class="before:content-['/'] before:mx-2"><a href="/canada/" class="hover:text-primary transition-colors">Canada CRS</a></li>
+      <li class="before:content-['/'] before:mx-2 text-neutral-800 font-medium">{entry.label}</li>
+    </ol>
+  </nav>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">CRS Score {entry.rangeLow}–{entry.rangeHigh}</h1>
+      <p class="text-lg opacity-90 max-w-2xl mx-auto">
+        Your Express Entry chances and how to improve your Comprehensive Ranking System score.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Stat Cards -->
+  <section class="max-w-6xl mx-auto px-4 -mt-8">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl border border-neutral-200 p-6 text-center shadow-sm">
+        <p class="text-sm text-neutral-500 mb-1">Score Range</p>
+        <p class="text-3xl font-bold text-primary">{entry.rangeLow}–{entry.rangeHigh}</p>
+        <p class="text-xs text-neutral-400 mt-1">out of 1,200 max</p>
+      </div>
+      <div class="bg-white rounded-xl border border-neutral-200 p-6 text-center shadow-sm">
+        <p class="text-sm text-neutral-500 mb-1">Invitation Likelihood</p>
+        <p class="text-3xl font-bold text-primary">
+          {entry.rangeHigh < 400 ? "Low" : entry.rangeHigh < 450 ? "Moderate" : entry.rangeHigh < 500 ? "Good" : "Excellent"}
+        </p>
+        <p class="text-xs text-neutral-400 mt-1">for general draws</p>
+      </div>
+      <div class="bg-white rounded-xl border border-neutral-200 p-6 text-center shadow-sm">
+        <p class="text-sm text-neutral-500 mb-1">Recommended Action</p>
+        <p class="text-lg font-bold text-primary">
+          {entry.rangeHigh < 425 ? "Improve Score" : entry.rangeHigh < 475 ? "Monitor Draws" : "Prepare Application"}
+        </p>
+        <p class="text-xs text-neutral-400 mt-1">primary strategy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What This Score Range Means -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-neutral-800 mb-6">What a CRS Score of {entry.rangeLow}–{entry.rangeHigh} Means</h2>
+    <div class="prose prose-lg max-w-none">
+      <p class="text-neutral-700 leading-relaxed">{entry.description}</p>
+    </div>
+  </section>
+
+  <!-- Typical Profile Examples -->
+  <section class="bg-neutral-100 py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-neutral-800 mb-6">Typical Profiles Scoring {entry.rangeLow}–{entry.rangeHigh}</h2>
+      <div class="space-y-4">
+        {entry.profileExamples.map((example, i) => (
+          <div class="bg-white rounded-lg border border-neutral-200 p-5 flex gap-4 items-start">
+            <span class="bg-primary text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center shrink-0">{i + 1}</span>
+            <p class="text-neutral-700">{example}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Improve -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-neutral-800 mb-6">How to Improve Your CRS Score from the {entry.rangeLow}–{entry.rangeHigh} Range</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-lg border border-neutral-200 p-6">
+        <h3 class="font-semibold text-neutral-800 mb-2">Improve Language Scores</h3>
+        <p class="text-neutral-600 text-sm">Retake IELTS, CELPIP, TEF, or TCF to achieve higher CLB/NCLC levels. Moving from CLB 8 to CLB 9 in all four abilities can add 30–50+ points through core and skill transferability bonuses.</p>
+      </div>
+      <div class="bg-white rounded-lg border border-neutral-200 p-6">
+        <h3 class="font-semibold text-neutral-800 mb-2">Learn French</h3>
+        <p class="text-neutral-600 text-sm">Achieving NCLC 7 or above in French alongside English CLB 5+ adds 50 CRS points. This is one of the most impactful single improvements available to most candidates.</p>
+      </div>
+      <div class="bg-white rounded-lg border border-neutral-200 p-6">
+        <h3 class="font-semibold text-neutral-800 mb-2">Gain Canadian Work Experience</h3>
+        <p class="text-neutral-600 text-sm">Even one year of Canadian skilled work experience in a NOC TEER 0, 1, 2, or 3 occupation adds significant points to both your core section and skill transferability combinations.</p>
+      </div>
+      <div class="bg-white rounded-lg border border-neutral-200 p-6">
+        <h3 class="font-semibold text-neutral-800 mb-2">Provincial Nominee Program</h3>
+        <p class="text-neutral-600 text-sm">A provincial nomination adds 600 CRS points, virtually guaranteeing an invitation. Explore PNP streams in Ontario, BC, Alberta, Saskatchewan, Manitoba, and other provinces.</p>
+      </div>
+      <div class="bg-white rounded-lg border border-neutral-200 p-6">
+        <h3 class="font-semibold text-neutral-800 mb-2">Get a Job Offer with LMIA</h3>
+        <p class="text-neutral-600 text-sm">A valid job offer supported by an approved LMIA adds 50 points for most NOC categories, or 200 points for senior management positions (NOC TEER 0, major group 00).</p>
+      </div>
+      <div class="bg-white rounded-lg border border-neutral-200 p-6">
+        <h3 class="font-semibold text-neutral-800 mb-2">Pursue Canadian Education</h3>
+        <p class="text-neutral-600 text-sm">Completing a Canadian post-secondary program adds 15 points (1–2 year program) or 30 points (3+ year program) to your additional factors, plus potential skill transferability boosts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="bg-neutral-100 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-neutral-800 mb-2 text-center">Calculate Your CRS Score</h2>
+      <p class="text-neutral-600 text-center mb-8">Use our free calculator to see exactly where you stand and model improvements.</p>
+      <CRSCalculator client:idle />
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-neutral-800 mb-6">Frequently Asked Questions: CRS {entry.rangeLow}–{entry.rangeHigh}</h2>
+    <div class="space-y-4">
+      {entry.faqs.map((faq) => (
+        <details class="bg-white rounded-lg border border-neutral-200 group">
+          <summary class="cursor-pointer p-5 font-semibold text-neutral-800 select-none flex items-center justify-between gap-4">
+            <span>{faq.question}</span>
+            <span class="text-neutral-400 group-open:rotate-45 transition-transform text-xl leading-none">+</span>
+          </summary>
+          <div class="px-5 pb-5 text-neutral-600 leading-relaxed border-t border-neutral-100 pt-4">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- Cross-Links -->
+  <section class="bg-neutral-100 py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-neutral-800 mb-6">Explore Other CRS Score Ranges</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        {otherRanges.map((r) => (
+          <a
+            href={`/crs-score-${r.slug}/`}
+            class="bg-white rounded-lg border border-neutral-200 p-3 text-center text-sm font-medium text-primary hover:bg-primary hover:text-white transition-colors"
+          >
+            {r.rangeLow}–{r.rangeHigh}
+          </a>
+        ))}
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="/canada/" class="text-primary hover:underline font-medium text-sm">Canada CRS Calculator &rarr;</a>
+        <a href="/australia/" class="text-primary hover:underline font-medium text-sm">Australia Points Calculator &rarr;</a>
+        <a href="/faq/" class="text-primary hover:underline font-medium text-sm">Immigration FAQ &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="max-w-4xl mx-auto px-4 py-8">
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+      <h3 class="font-semibold text-amber-800 mb-2">Disclaimer</h3>
+      <p class="text-amber-700 text-sm leading-relaxed">
+        This page is for informational purposes only and does not constitute legal advice, immigration advice, or any form of professional consultation. The information presented here is based on publicly available data about Canada's Express Entry Comprehensive Ranking System (CRS) and may not reflect the most recent policy changes. CRS draw cutoffs, eligibility criteria, and immigration policies can change at any time without notice. We are not affiliated with Immigration, Refugees and Citizenship Canada (IRCC) or any government agency. For personalized immigration advice, please consult a Regulated Canadian Immigration Consultant (RCIC) or a licensed immigration lawyer. Use of this tool and reliance on any information provided is at your own risk.
+      </p>
+    </div>
+  </section>
+</Layout>

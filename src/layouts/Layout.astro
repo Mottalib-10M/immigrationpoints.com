@@ -6,6 +6,9 @@ interface Props {
 
 const { title, description = 'Free immigration points calculators for Canada Express Entry CRS and Australia SkillSelect. Calculate your score instantly.' } = Astro.props;
 const currentYear = new Date().getFullYear();
+
+const rawCanonical = new URL(Astro.url.pathname, 'https://immigrationpoints.com').href;
+const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical}/`;
 ---
 
 <!doctype html>
@@ -19,27 +22,94 @@ const currentYear = new Date().getFullYear();
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Immigration Points Calculator" />
+    <meta name="author" content="Mottalib Radif" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Immigration Points Calculator",
+      "url": "https://immigrationpoints.com",
+      "logo": "https://immigrationpoints.com/favicon.svg",
+      "founder": {
+        "@type": "Person",
+        "name": "Mottalib Radif"
+      }
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mottalib Radif",
+      "jobTitle": "Financial Technology Expert",
+      "url": "https://immigrationpoints.com"
+    })} />
+
+    <!-- Plausible Analytics -->
+    <script defer data-domain="immigrationpoints.com" src="https://plausible.io/js/script.js"></script>
+
+    <!-- TODO: Replace G-XXXXXXXXXX with your real GA4 Measurement ID from https://analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-blue-700 focus:rounded-lg focus:shadow-lg focus:ring-2 focus:ring-blue-500">Skip to content</a>
     <!-- Header -->
     <header class="bg-primary text-white shadow-md">
-      <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between flex-wrap gap-4">
+      <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="/" class="text-xl font-bold hover:opacity-90 transition-opacity">
           ImmigrationPoints.com
         </a>
-        <div class="flex items-center gap-6 text-sm">
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-6 text-sm">
           <a href="/canada/" class="hover:underline underline-offset-4">Canada CRS</a>
           <a href="/australia/" class="hover:underline underline-offset-4">Australia Points</a>
+          <a href="/guides/" class="hover:underline underline-offset-4">Guides</a>
           <a href="/faq/" class="hover:underline underline-offset-4">FAQ</a>
         </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="md:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="hamburger-line block w-6 h-0.5 bg-white rounded transition-all duration-300 origin-center"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-white rounded transition-all duration-300 origin-center"></span>
+          <span class="hamburger-line block w-6 h-0.5 bg-white rounded transition-all duration-300 origin-center"></span>
+        </button>
       </nav>
+
+      <!-- Mobile Navigation Panel -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+      >
+        <div class="px-4 pb-4 flex flex-col gap-3 text-sm border-t border-white/20 pt-4">
+          <a href="/canada/" class="hover:underline underline-offset-4 py-1">Canada CRS</a>
+          <a href="/australia/" class="hover:underline underline-offset-4 py-1">Australia Points</a>
+          <a href="/guides/" class="hover:underline underline-offset-4 py-1">Guides</a>
+          <a href="/faq/" class="hover:underline underline-offset-4 py-1">FAQ</a>
+        </div>
+      </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
 
@@ -57,6 +127,7 @@ const currentYear = new Date().getFullYear();
           <div>
             <h3 class="text-white font-semibold mb-3">Resources</h3>
             <ul class="space-y-2 text-sm">
+              <li><a href="/guides/" class="hover:text-white transition-colors">Immigration Guides</a></li>
               <li><a href="/faq/" class="hover:text-white transition-colors">Frequently Asked Questions</a></li>
               <li><a href="/legal/" class="hover:text-white transition-colors">Legal Disclaimer</a></li>
               <li><a href="/privacy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
@@ -76,9 +147,42 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
     </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script is:inline>
+      (function() {
+        var btn = document.getElementById('mobile-menu-btn');
+        var menu = document.getElementById('mobile-menu');
+        if (!btn || !menu) return;
+
+        btn.addEventListener('click', function() {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          btn.classList.toggle('menu-open');
+
+          if (!expanded) {
+            menu.style.maxHeight = menu.scrollHeight + 'px';
+          } else {
+            menu.style.maxHeight = '0';
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
 
 <style is:global>
   @import '../styles/global.css';
+
+  /* Hamburger to X animation */
+  .menu-open .hamburger-line:nth-child(1) {
+    transform: translateY(0.5rem) rotate(45deg);
+  }
+  .menu-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .menu-open .hamburger-line:nth-child(3) {
+    transform: translateY(-0.5rem) rotate(-45deg);
+  }
 </style>
