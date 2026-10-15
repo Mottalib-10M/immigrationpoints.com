@@ -1,4 +1,5 @@
 ---
+import { pageDate, dateLongue } from '../lib/page-date';
 interface Props {
   title: string;
   description?: string;
@@ -6,6 +7,8 @@ interface Props {
 
 const { title, description = 'Free immigration points calculators for Canada Express Entry CRS and Australia SkillSelect. Calculate your score instantly.' } = Astro.props;
 const currentYear = new Date().getFullYear();
+// Date de mise à jour en bas de chaque page, en toutes lettres (RECETTE §8.4).
+const updated = pageDate(Astro.url.pathname);
 
 const rawCanonical = new URL(Astro.url.pathname, 'https://immigrationpoints.com').href;
 const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical}/`;
@@ -134,6 +137,7 @@ const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical
         </div>
         <div class="border-t border-neutral-700 pt-6 text-center text-sm">
           <p>&copy; {currentYear} ImmigrationPoints.com. All rights reserved. Not affiliated with any government agency.</p>
+          {updated && <p class="mt-2">Last updated <time datetime={updated}>{dateLongue(updated)}</time></p>}
         </div>
       </div>
     </footer>
