@@ -53,6 +53,13 @@ const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical
       "url": "https://immigrationpoints.com"
     })} />
 
+    {/* Google Analytics 4, régime « sans bandeau » (décision de l'éditeur du 2026-10-17) : cookies _ga et
+         _ga_<ID> de 13 mois au plus non prolongés, publicité refusée, IP anonymisée, adresse de page sans
+         paramètres. Décrit dans /privacy/. */}
+    <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted'});`} />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-43BP26Y79R"></script>
+    <script is:inline set:html={`gtag('js',new Date());gtag('config','G-43BP26Y79R',{anonymize_ip:true,page_location:location.origin+location.pathname,cookie_expires:33696000,cookie_update:false,allow_google_signals:false,allow_ad_personalization_signals:false});`} />
+
     <script is:inline set:html={`(function(){window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments);};window.clarity('consentv2',{ad_Storage:'denied',analytics_Storage:'denied'});var s=document.createElement('script');s.async=true;s.src='https://www.clarity.ms/tag/yx9u4uhobk';document.head.appendChild(s);})();`} />
   </head>
   <body data-clarity-mask="true" class="min-h-screen flex flex-col">

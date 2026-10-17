@@ -9,7 +9,8 @@
     "check:cookies": "python3 scripts/check-cookies.py .",
     "preview": "astro preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check": "python3 scripts/check-cookies.py . && node scripts/check-layout.mjs ."
   },
   "dependencies": {
     "@astrojs/react": "^4.2.1",
