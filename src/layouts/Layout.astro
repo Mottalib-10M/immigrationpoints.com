@@ -27,6 +27,9 @@ const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical
     <meta property="og:site_name" content="Immigration Points Calculator" />
     <meta name="author" content="Radif Partners" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- favicon.ico et apple-touch-icon : le robot des favicons de Google les demande a la racine (RECETTE §13). -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
 
