@@ -24,7 +24,7 @@ const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Immigration Points Calculator" />
+    <meta property="og:site_name" content="Immigration Points" />
     <meta name="author" content="Radif Partners" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- favicon.ico et apple-touch-icon : le robot des favicons de Google les demande a la racine (RECETTE §13). -->
@@ -39,7 +39,7 @@ const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Immigration Points Calculator",
+      "name": "Immigration Points",
       "url": "https://immigrationpoints.com",
       "logo": "https://immigrationpoints.com/favicon.svg",
       "founder": {
@@ -70,8 +70,9 @@ const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical
     <!-- Header -->
     <header class="bg-primary text-white shadow-md">
       <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/" class="text-xl font-bold hover:opacity-90 transition-opacity">
-          ImmigrationPoints.com
+        <!-- Nom du site = mots du domaine, Points en couleur (teinte claire du rouge secondaire, lisible sur le bleu) -->
+        <a href="/" class="shrink-0 whitespace-nowrap text-xl font-bold hover:opacity-90 transition-opacity">
+          Immigration <span class="text-red-300">Points</span>
         </a>
 
         <!-- Desktop Navigation -->
@@ -139,14 +140,14 @@ const canonicalURL = rawCanonical.endsWith('/') ? rawCanonical : `${rawCanonical
           <div>
             <h3 class="text-white font-semibold mb-3">About</h3>
             <p class="text-sm">
-              ImmigrationPoints.com provides free, open-source immigration points calculators
+              Immigration Points provides free, open-source immigration points calculators
               for prospective migrants to Canada and Australia. Our calculators are for informational
               purposes only and do not constitute legal advice.
             </p>
           </div>
         </div>
         <div class="border-t border-neutral-700 pt-6 text-center text-sm">
-          <p>&copy; {currentYear} ImmigrationPoints.com. All rights reserved. Not affiliated with any government agency.</p>
+          <p>&copy; {currentYear} Immigration Points. All rights reserved. Not affiliated with any government agency.</p>
           {updated && <p class="mt-2">Last updated <time datetime={updated}>{dateLongue(updated)}</time></p>}
         </div>
       </div>

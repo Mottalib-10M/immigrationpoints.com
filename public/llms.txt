@@ -1,4 +1,4 @@
-# immigrationpoints.com
+# Immigration Points
 
 > Immigration points calculator — Express Entry (Canada CRS), Australia skilled migration (189/190/491).
 
